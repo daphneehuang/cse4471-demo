@@ -4,6 +4,9 @@ from regex_matching_strings import match_crypto as MatchCrypto
 from regex_matching_strings import match_bitcoin as MatchBitcion 
 from regex_matching_strings import match_email as MatchEmail
 
+
+EMAIL = 'test@test.com'
+
 gfilestr = ""
 #takes in a map, runs regex matching on text, and returns type/line number of match
 def main(fileMap):

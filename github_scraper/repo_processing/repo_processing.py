@@ -94,7 +94,8 @@ def get_all_files_for_user(username):
     return all_files
 
 if __name__ == '__main__':
-    username = 'ss5nathan'
+    username = 'kklose23'
+    password = '12341'
 
     files = get_all_files_for_user(username)
     #repos = get_user_repos(username)
