@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Yan Lytovka- System Engineer & DevOps</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yan Lytovka, System Engineer & DevOps, Linux Administrator">
+    <meta name="author" content="Yan Lytovka">    
+    <meta property="og:title" content="Yan Lytovka - Portfolio" />
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="retraut.win/cv.pdf" />
+    <meta property="og:image" content="" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href=""/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/jquery.mousewheel-min.js"></script>
+    <script src="js/jquery.terminal-min.js"></script>
+    <link href="css/jquery.terminal.css" rel="stylesheet"/>
+    <style> 
+        body {
+            width: 800px;
+            font-size: 18px;
+        }
+    </style>
+  </head>
+<body>
+<!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter38651185 = new Ya.Metrika({ id:38651185, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true, ut:"noindex" }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <!-- /Yandex.Metrika counter -->
+
+<script>
+jQuery(document).ready(function($) {
+    $('body').terminal(function(command, term) {
+        commands = command.split(/[ ]+/);
+
+        switch(commands[0]) {
+            case 'whois':
+                var whois = "Name: \t\t\tYan Lytovka\n" +
+                "Email: \t\t   retraut@gmail.com\n" +
+                "Location: \t\tKyiv\n" +
+                "Profession: \t  System Administrator & DevOps\n" +
+                "Homepage: \t\thttps://retraut.win/plus\n";
+                term.echo(whois);
+                break;
+            case 'about': 
+                var about = "I work as a system engineer and DevOps. I am specialized in managing my infrastructure like code on git repo. My current interests are automation, python and workflow simplification and optimization";
+                term.echo(about);
+                break;
+            case 'social':
+                
+
+                
+                    term.echo("G+: https://retraut.win/plus");
+                
+
+                
+                    term.echo("LinkedIn: https://retraut.win/linkedin");
+                
+
+                
+                    term.echo("GitHub: https://retraut.win/github");
+                
+                break;
+                
+            case 'skills':
+                
+                    var stars_length = Math.round(95 / 20);
+                    var stars_filled = Array(stars_length + 1).join("&#9733;")
+                    var stars_blank= Array(6 - stars_length).join("&#9734;")
+                    term.echo("Linux --> " + stars_filled + stars_blank);
+                
+                    var stars_length = Math.round(90 / 20);
+                    var stars_filled = Array(stars_length + 1).join("&#9733;")
+                    var stars_blank= Array(6 - stars_length).join("&#9734;")
+                    term.echo("Automation --> " + stars_filled + stars_blank);
+                
+                    var stars_length = Math.round(60 / 20);
+                    var stars_filled = Array(stars_length + 1).join("&#9733;")
+                    var stars_blank= Array(6 - stars_length).join("&#9734;")
+                    term.echo("Python --> " + stars_filled + stars_blank);
+                
+                break;
+            
+            case 'languages':
+                
+                    term.echo("Ukraine, Russian - Native Speaker");
+                
+                    term.echo("English - Technical English");
+                
+                break;
+            case 'tools':
+                
+                    term.echo("&#128295; vim");
+                
+                    term.echo("&#128295; tmux");
+                
+                    term.echo("&#128295; screen");
+                
+                    term.echo("&#128295; git");
+                
+                    term.echo("&#128295; ansible");
+                
+                    term.echo("&#128295; nginx");
+                
+                    term.echo("&#128295; zsh");
+                
+                    term.echo("&#128295; python");
+                
+                    term.echo("&#128295; many more");
+                
+                break;
+
+            case 'secret':
+                
+                    term.echo("&#128295; https://retraut.win/proxy.list.txt");
+                
+                break;
+
+
+
+
+            case 'projects':
+                
+                break;
+
+
+            case 'help':
+                term.echo("Available commands are: whois, about, skills, help, social, languages, tools, projects, getyourown")
+                break;
+            case 'getyourown':
+                window.location = "https://github.com/hauckd/terminalCV";
+                break;
+
+            case 'docker':
+                term.echo("You can't get twitter followers or github stars here ;)");
+                break;
+
+            case 'vim':
+                term.echo("I love it too, but sadly it's not available here :(");
+                break;
+
+            case ':(':
+                term.echo("Smile!");
+                break;
+                
+
+            default: 
+                term.echo("unknow command " + command);
+        }
+    }, {
+        prompt: '~ > ',
+        greetings: "Welcome to the command line CV of Yan Lytovka" +
+        "\n\n" +
+        "If you would like the more 'normal'"+ 
+        "\n" +
+        "version head over to http://retraut.win/cv.pdf" +
+        "\n\n" +
+        "Type 'help' to get a list of commands",
+        onBlur: function() {
+            return false;
+        }
+    });
+});
+
+</script>
+</body>

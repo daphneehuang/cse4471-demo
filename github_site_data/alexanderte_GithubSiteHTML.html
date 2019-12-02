@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,400i,500" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400" rel="stylesheet">
+			<title>Alexander Teinum</title>
+			<style>
+				body {
+					font-family: 'IBM Plex Sans', sans-serif;
+					line-height: 1.875;
+					font-weight: 400;
+					font-size: 16px;
+				}
+
+				body.light {
+					background-color: #fdffff;
+					color: #0f3763;
+				}
+
+				body.dark {
+					background-color: #141c2b;
+					color: #d9dce4;
+				}
+
+				h1, h2, h3 {
+					font-weight: 300;
+				}
+
+				h1 {
+					font-size: 26.79296875px;
+					margin-top: 24px;
+				}
+	
+				h2 {
+					font-size: 22.5625px;
+					margin-top: 40px;
+				}
+	
+				h3 {
+					font-size: 19px;
+					margin-top: 40px;
+				}
+
+				body.light h1,
+				body.light h2,
+				body.light h3 {
+					color: #003880;
+				}
+
+				body.dark h1,
+				body.dark h2,
+				body.dark h3 {
+					color: #c8ddff;
+				}
+
+				@media (max-width: 1023.98px) {
+					.container {
+						margin: 28px auto 48px auto;
+					}
+				}
+
+				@media (min-width: 1024px) {
+					.container {
+						margin: 48px auto;
+					}
+				}
+
+				.container {
+					max-width: 896px;
+					padding: 0 16px;
+				}
+
+				nav ul {
+					list-style-type: none;
+					padding: 0;
+				}
+
+				nav li {
+					margin-bottom: 8px;
+				}
+
+				nav li .date {
+					display: inline-block;
+					width: 104px;
+				}
+
+				.all-posts {
+					font-size: 13.47368421052632px;
+					margin: 16px 0 32px 0;
+				}
+
+				a {
+					text-decoration: none;
+				}
+
+				a:hover {
+					text-decoration: underline;
+				}
+
+				body.light a {
+					color: #006aee;
+				}
+
+				body.dark a {
+					color: #7da7ef;
+				}
+
+				.toggle-theme {
+					font-size: 0.889rem;
+					margin-top: 40px;
+					padding-top: 24px;
+				}
+				
+				body.light .toggle-theme {
+					border-top: 1px solid #dbe0ed;
+				}
+
+				body.dark .toggle-theme {
+					border-top: 1px solid #2b3241;
+				}
+
+				pre {
+					overflow: auto;
+					padding: 0.25rem 0.75rem;
+					margin-bottom: 32px;
+				}
+
+				body.light pre {
+					background-color: #f4f7ff;
+				}
+
+				body.dark pre {
+					background-color: #1a2231;
+				}
+
+				code {
+					font-size: 0.875em;
+					font-family: 'IBM Plex Mono', monospace;
+				}
+
+				table {
+					border-collapse: collapse;
+					width: 100%;
+					margin-bottom: 32px;
+				}
+
+				@media (max-width: 1023.98px) {
+					table {
+						font-size: 14px;
+					}
+				}
+
+				@media (min-width: 1024px) {
+					table {
+						font-size: 15px;
+					}
+				}
+
+				body.light tr {
+					border-bottom: 0.5px solid #bdc5d8;
+				}
+
+				body.dark tr {
+					border-bottom: 0.5px solid #424957;
+				}
+
+				th {
+					text-align: left;
+					font-weight: 500;
+					padding: 12px;
+					white-space: nowrap;
+				}
+
+				td {
+					padding: 12px;
+					white-space: nowrap;
+				}
+			</style>
+			<script>
+				document.addEventListener('DOMContentLoaded', function(event) {
+					if (localStorage.getItem('theme') === 'dark') {
+						setDarkTheme();
+					} else {
+						setLightTheme();
+					}
+				});
+
+				function toggleTheme(event) {
+					event.preventDefault();
+
+					if (document.body.className === 'dark') {
+						setLightTheme();
+					} else {
+						setDarkTheme();
+					}
+				}
+
+				function setLightTheme() {
+						document.body.className = 'light';
+						document.getElementsByClassName('toggle-theme')[0].children[0].innerHTML = 'Dark';
+						localStorage.setItem('theme', 'light');
+				}
+
+				function setDarkTheme() {
+						document.body.className = 'dark';
+						document.getElementsByClassName('toggle-theme')[0].children[0].innerHTML = 'Light';
+						localStorage.setItem('theme', 'dark');
+				}
+			</script>
+		</head>
+		<body>
+			<div class="container"><h1>Alexander Teinum</h1>
+
+<p>Software developer located in Kristiansand, Norway</p>
+<h2>Posts</h2><nav class="posts"><ul><li><span class="date">2019-01-13</span><a href="posts/2019-01-13-javascript-default-value.html">Creating a `valueOrDefault` function in JavaScript</a></li>
+<li><span class="date">2019-01-09</span><a href="posts/2019-01-09-typographic-scale.html">Building a typographic scale</a></li>
+<li><span class="date">2019-01-01</span><a href="posts/2019-01-01-styling-tmux.html">Styling the tmux status bar for a minimal look</a></li>
+<li><span class="date">2019-01-01</span><a href="posts/2019-01-01-simple-website.html">Announcing simple-website 1.5.0</a></li>
+<li><span class="date">2018-12-31</span><a href="posts/2018-12-31-2018-summary.html">Summary of 2018</a></li>
+</ul></nav><p class="all-posts"><a href="all-posts.html">All posts</a></p><h2>Pages</h2><nav class="pages"><ul><li><a href="pages/contact.html">Contact</a></li>
+<li><a href="pages/projects.html">Projects</a></li>
+<li><a href="pages/setup.html">Setup</a></li>
+</ul></nav>
+					<p class="toggle-theme">
+						<a href="#" onclick="toggleTheme(event)">Dark</a>
+					</p>
+			</div>
+		</body>
+	</html>

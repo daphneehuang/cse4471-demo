@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Sujith's &middot;  Blog
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-64070017-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>A Blog using Markdown and text editor</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about/">About</a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2019. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Sujith's</a>
+            <small> Blog</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2016/07/29/Hosting-multiple-website-in-single-server-with-apache/">
+        How to host multiple website on a single server with Apache
+      </a>
+    </h1>
+
+    <span class="post-date">29 Jul 2016</span>
+
+    <p>If you are a web developer using Apache web server for hosting, then this is for you.
+You might have faced scenarios where you have to host multiple websites in same server. In Apache we can use virtual hosts to do this.</p>
+
+<p>For instance if you want to host <code class="highlighter-rouge">example.com</code> and <code class="highlighter-rouge">sujith.com</code> in a server. I am assuming that you have already installed Apache webserver.</p>
+
+<p>As a first step, keep the content of sites in <code class="highlighter-rouge">/var/www/example.com/html</code>, <code class="highlighter-rouge">/var/www/sujith.com/html</code> locations.</p>
+
+<p>Now we have to create a virtual hosts file for both the sites in <code class="highlighter-rouge">/etc/apache2/sites-available/</code> directory.</p>
+
+<h3 id="for-first-domain">for first domain</h3>
+
+<p>create the virtual host file from <code class="highlighter-rouge">000-default.conf</code>.</p>
+
+<p><code class="highlighter-rouge">$ sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/example.com.conf</code></p>
+
+<p>Open the created file in your favorite text editor</p>
+
+<p><code class="highlighter-rouge">$ sudo nano /etc/apache2/sites-available/example.com.conf</code></p>
+
+<p>Next you have to modify the default configuration like this</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &lt;VirtualHost *:80&gt;
+    ServerAdmin admin@example.com
+    ServerName example.com
+    ServerAlias www.example.com
+    DocumentRoot /var/www/example.com/html
+    ErrorLog ${APACHE_LOG_DIR}/example.error.log
+    CustomLog ${APACHE_LOG_DIR}/example.access.log combined
+&lt;/VirtualHost&gt; 
+
+</code></pre></div></div>
+
+<h3 id="for-second-domain">for second domain</h3>
+
+<p>create the virtual host file from <code class="highlighter-rouge">000-default.conf</code>.</p>
+
+<p><code class="highlighter-rouge">$ sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/sujith.com.conf</code></p>
+
+<p>Open the created file in your favorite text editor</p>
+
+<p><code class="highlighter-rouge">$ sudo nano /etc/apache2/sites-available/sujith.com.conf</code></p>
+
+<p>Next you have to modify the default configuration like this</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &lt;VirtualHost *:80&gt;
+    ServerAdmin admin@sujith.com
+    ServerName sujith.com
+    ServerAlias www.sujith.com
+    DocumentRoot /var/www/sujith.com/html
+    ErrorLog ${APACHE_LOG_DIR}/sujith.error.log
+    CustomLog ${APACHE_LOG_DIR}/sujith.access.log combined
+&lt;/VirtualHost&gt; 
+
+</code></pre></div></div>
+<p>Now enable the sites</p>
+
+<p><code class="highlighter-rouge">$ sudo a2ensite example.com.conf</code>
+<code class="highlighter-rouge">$ sudo a2ensite sujith.com.conf</code></p>
+
+<p>Once the site is enabled, You have to map both <code class="highlighter-rouge">sujith.com</code> and <code class="highlighter-rouge">example.com</code> to the IP of this server in dns settings of the domains.</p>
+
+<p>You can also test this by manually adding an entry like this to <code class="highlighter-rouge">/etc/hosts</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  127.0.0.1 sujith.com
+  127.0.0.1 example.com
+  ## use server's IP address if you are testing from any other system.
+</code></pre></div></div>
+
+<p>Now you can test this by visiting <code class="highlighter-rouge">http://example.com</code> and <code class="highlighter-rouge">http://sujith.com</code>.</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2016/07/12/Cycling-through-the-change-list-in-Vim/">
+        How to move cursor to the last edited location in Vim
+      </a>
+    </h1>
+
+    <span class="post-date">12 Jul 2016</span>
+
+    <p>For moving or jumping cursor to the last edited locations in <a href="https://en.wikipedia.org/wiki/Vim_(text_editor)">Vim</a> use <code class="highlighter-rouge">g,</code> and <code class="highlighter-rouge">g;</code> commands in normal mode.</p>
+
+<p><code class="highlighter-rouge">g,</code> moves cursor forward or to the newer positions in change list, <code class="highlighter-rouge">g;</code> moves the cursor to the older location or positions in the changelist.</p>
+
+<p>Both of these operations can accept <code class="highlighter-rouge">count</code> as an optional argument which will take cursor to the <code class="highlighter-rouge">n</code>-th position in the change list.</p>
+
+<p>To know more about <code class="highlighter-rouge">changelist</code> use <code class="highlighter-rouge">:help changelist</code>.</p>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2016/06/24/Transparent-iTerm2-on-a-mac/">
+        How to set transparent background for iTerm2 in full screen mode on a Mac
+      </a>
+    </h1>
+
+    <span class="post-date">24 Jun 2016</span>
+
+    <p>I was trying to set transparent background to <a href="https://en.wikipedia.org/wiki/ITerm2">iTerm2</a>, but when I switch to full screen mode the background is again black.</p>
+
+<p>Recently  I came across the following settings in the iTerm2, which allows us to make the background transparent in full screen mode.</p>
+
+<ol>
+  <li>Open your iTerm2 choose <code class="highlighter-rouge">Full screen</code> window style in <code class="highlighter-rouge">Open profiles -&gt; Edit profiles -&gt; Window -&gt; Style</code>settings.</li>
+  <li>Now un-check the <code class="highlighter-rouge">Native full screen windows</code> in <code class="highlighter-rouge">General</code> settings of iTerm(not the profile).</li>
+  <li>Now you can choose the level transparency in <code class="highlighter-rouge">Open profiles -&gt; Edit profiles -&gt; Window</code> settings.</li>
+  <li>Now check the iTerm2 in full screen mode, You will be able to see the icons and apps in the background.</li>
+</ol>
+
+<p>Now you can use the system-wide hotkey mentioned in <code class="highlighter-rouge">Keys</code> settings/Preferences of iTerm to show/hide iTerm.</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2016/06/19/How-to-select-range-in-vim-conditionally-for-performing-operations-on-multiple-lines/">
+        How to select a range conditionally in vim
+      </a>
+    </h1>
+
+    <span class="post-date">19 Jun 2016</span>
+
+    <p>I use <code class="highlighter-rouge">norm</code> command along with visual selection to perform normal-mode operations on several lines in one go.</p>
+
+<p>Now how to do the range selection based on a condition without switching to Visual selection mode ?</p>
+
+<p>For example, if we want to append a comma(<code class="highlighter-rouge">,</code>) to each line till the next blank line.
+Let’s do this without a visual selection, <code class="highlighter-rouge">:.,/^$/-1 norm A,</code> this command will do the above task in one-go.</p>
+
+<h3 id="command-explanation">Command explanation</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">:</code>  :  the starting of command-mode.</li>
+  <li><code class="highlighter-rouge">.</code>  :  the first part of the range selection, were <code class="highlighter-rouge">.</code> indicates the current line in range selection</li>
+  <li><code class="highlighter-rouge">,</code> :  is the separator used between start and end of the range.</li>
+  <li><code class="highlighter-rouge">/^$/</code> :  is the pattern for blank line, were <code class="highlighter-rouge">^</code> is the start and <code class="highlighter-rouge">$</code> end of line.</li>
+  <li><code class="highlighter-rouge">-1</code>  :  <code class="highlighter-rouge">-1</code> indicates the line before, when it si combined with pattern the line before blank line.</li>
+  <li><code class="highlighter-rouge">norm A,</code> :  performs normal mode operation <code class="highlighter-rouge">A,</code> which will append a <code class="highlighter-rouge">,</code> to the end of line.</li>
+</ul>
+
+<p>Now you can use any patterns specified in <a href="http://vim.wikia.com/wiki/Ranges">Ranges doc</a> to select/specify the Range, this blank line pattern is just an example.</p>
+
+<p>This conditional range selection is very useful while recording macro spanning over multiple lines.</p>
+
+<p>Read more about <a href="http://vim.wikia.com/wiki/Ranges">Ranges</a>.</p>
+
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2016/05/23/How-to-resize-a-Logical-Volume-to-increase-virtual-disk-of-VM-instance/">
+        How to increase the storage of a Virtual Machine by resizing Logical Volume
+      </a>
+    </h1>
+
+    <span class="post-date">23 May 2016</span>
+
+    <p>Increasing the partition/storage of a linux Virtual-Machine instance is done in three steps.</p>
+
+<h3 id="resize-the-virtual-disk">Resize the Virtual Disk</h3>
+
+<p>Power off the virtual machine and then, increase the virtual disk/storage size from the virtual machine settings. By increasing storage space here, the OS is not going to use/detect this. For that we have resize the partition using Disk partition manager (Gparted here).</p>
+
+<h3 id="get-gparted-and-resize-the-partition">Get Gparted and resize the partition.</h3>
+
+<p>For gparted we can either use Gparted.iso or any of ubuntu live CD. I’m using a bootable USB stick with Ubuntu live CD iso.</p>
+
+<blockquote>
+  <p>For choosing/changing the boot order/device for virtual instance, We have to increase the boot delay in Options -&gt; Boot options -&gt; Power on Boot Delay.
+This will allow us to see the boot screen for the specified no. of milliseconds.</p>
+</blockquote>
+
+<p>In Gparetd first resize the extended partition, then resize the LVM.</p>
+
+<h3 id="resize-the-lvm-volume">Resize the LVM Volume.</h3>
+
+<p>For resizing the LVM, first resize the Physical Volume.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>pvs
+
+PV         VG              Fmt  Attr PSize   PFree
+  /dev/sda5  ubuntuServer-vg lvm2 a--  99.76g 9.16g
+
+<span class="nv">$ </span><span class="nb">sudo </span>pvresize /dev/sda5
+
+Physical volume <span class="s2">"/dev/sda5"</span> changed
+  1 physical volume<span class="o">(</span>s<span class="o">)</span> resized / 0 physical volume<span class="o">(</span>s<span class="o">)</span> not resized
+
+</code></pre></div></div>
+
+<p>Next extend the Logical volume to the full size of PV(Physical Volume).</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>lvdisplay
+
+  <span class="nt">---</span> Logical volume <span class="nt">---</span>
+  LV Path                /dev/PA-server-vg/root
+  LV Name                root
+  VG Name                PA-server-vg
+  LV UUID                fwuhJl-mvBY-xDgv-ihmF-CCDH-U2kX-EZ7tMV
+  LV Write Access        <span class="nb">read</span>/write
+  LV Creation host, <span class="nb">time </span>PA-server, 2014-10-17 19:31:06 +0530
+  LV Status              available
+  <span class="c"># open                 1</span>
+  LV Size                31.76 GiB
+  Current LE             8130
+  Segments               2
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently <span class="nb">set </span>to     256
+  Block device           252:0
+
+  <span class="nt">---</span> Logical volume <span class="nt">---</span>
+  LV Path                /dev/PA-server-vg/swap_1
+  LV Name                swap_1
+  VG Name                PA-server-vg
+  LV UUID                Xqk8xg-mVYW-zgpc-FYPz-MSpd-0bIr-Kqgnxq
+  LV Write Access        <span class="nb">read</span>/write
+  LV Creation host, <span class="nb">time </span>PA-server, 2014-10-17 19:31:06 +0530
+  LV Status              available
+  <span class="c"># open                 0</span>
+  LV Size                8.00 GiB
+  Current LE             2048
+  Segments               1
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently <span class="nb">set </span>to     256
+  Block device           252:1
+</code></pre></div></div>
+
+<p>Take the LV Path of the volume to be extended(root, here /dev/PA-server-vg/root
+), now we can resize it to the available 100% using <code class="highlighter-rouge">lvextend</code>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>lvextend <span class="nt">-l</span>+100%FREE /dev/PA-server-vg/root
+</code></pre></div></div>
+<p>Now the last step is to extend the file-system on the volume.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>resize2fs /dev/PA-server-vg/root
+</code></pre></div></div>
+
+<p>Now check the with <code class="highlighter-rouge">df -h</code>, we have resized the disk/storage of the VM.</p>
+
+  </div>
+  
+</div>
+
+<div class="pagination">
+  
+    <a class="pagination-item older" href="/page2">Older</a>
+  
+  
+    <span class="pagination-item newer">Newer</span>
+  
+</div>
+        
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>

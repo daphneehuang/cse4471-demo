@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Temporal Dead Zone | Alexander Huang’s blog. On programming, physics, mathematics, and literature etc.</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Temporal Dead Zone" />
+<meta name="author" content="Alexander Huang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Alexander Huang’s blog. On programming, physics, mathematics, and literature etc." />
+<meta property="og:description" content="Alexander Huang’s blog. On programming, physics, mathematics, and literature etc." />
+<link rel="canonical" href="https://alxdhuang.github.io/" />
+<meta property="og:url" content="https://alxdhuang.github.io/" />
+<meta property="og:site_name" content="Temporal Dead Zone" />
+<script type="application/ld+json">
+{"@type":"WebSite","headline":"Temporal Dead Zone","url":"https://alxdhuang.github.io/","name":"Temporal Dead Zone","author":{"@type":"Person","name":"Alexander Huang"},"description":"Alexander Huang’s blog. On programming, physics, mathematics, and literature etc.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"/>
+  <script type="text/javascript" src="/assets/js/color.js"></script><link type="application/atom+xml" rel="alternate" href="https://alxdhuang.github.io/feed.xml" title="Temporal Dead Zone" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135191620-1"></script>
+<script>
+  window['ga-disable-UA-135191620-1'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-135191620-1');
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">Temporal Dead Zone</a>
+
+    <nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <svg viewBox="0 0 18 15" width="18px" height="15px">
+            <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+          </svg>
+        </span>
+      </label>
+
+      <div class="trigger"><a class="page-link" href="/">Home</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/search/">Search</a><a class="page-link" href="/categories/">Categories</a><a class="page-link" href="/tags/">Tags</a><a class="page-link" href="/stars/">Stars</a></div>
+    </nav>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="home card">
+
+  <h2 class="post-list-heading">Recent Posts</h2>
+    <ul class="post-list"><li><span class="post-meta">Apr 15, 2019</span>
+        <h3>
+          <a class="post-link" href="/2019/04/15/yong-python-shi-xian-yi-ge-cocos-creator-xiang-mu-da-bao-jiao-ben.html">
+            用 Python 实现一个 Cocos Creator 项目打包脚本
+          </a>
+        </h3><p>项目需求：每一次打包总是需要进行一堆繁琐易错的操作，如压缩配置表、构建发布、压缩图片，有没有办法写一个脚本自动完成这些操作？有。</p>
+
+</li><li><span class="post-meta">Apr 3, 2019</span>
+        <h3>
+          <a class="post-link" href="/2019/04/03/yi-ge-sdkguan-li-qi.html">
+            一个SDK管理器
+          </a>
+        </h3><p>游戏若要在<a href="http://gamerank.sfw.cn/">渠道</a>上架，通常需要接入渠道方提供的SDK，如用户系统、支付系统等等。虽然市面上已有许多打包工具（<a href="http://www.anysdk.com/">AnySDK</a>，<a href="http://www.6xsdk.com/">U8SDK</a>）让游戏开发者可以快速接入各个渠道，但是因为不见得所有的渠道都能得到支持，游戏开发者仍然需要自己去设计代码架构，可以更方便地接入SDK。</p>
+
+</li><li><span class="post-meta">Mar 30, 2019</span>
+        <h3>
+          <a class="post-link" href="/2019/03/30/how-to-set-the-background-image-in-jekyll-according-to-week-days.html">
+            How to Set The Background Image in Jekyll According to Week Days
+          </a>
+        </h3><p>I have wrote a script that could set different background images to the <code class="highlighter-rouge">&lt;body&gt;</code> element according to different week days. Just insert the code below after the <code class="highlighter-rouge">&lt;body&gt;</code> element.</p>
+
+</li><li><span class="post-meta">Mar 29, 2019</span>
+        <h3>
+          <a class="post-link" href="/2019/03/29/how-to-implement-a-tags-archive-system-in-jekyll.html">
+            How to Implement a Tags Archive System in Jekyll
+          </a>
+        </h3><p>This post introduces how do I implement a tags archive system in <a href="https://jekyllrb.com/">Jekyll</a>.</p>
+
+</li><li><span class="post-meta">Mar 28, 2019</span>
+        <h3>
+          <a class="post-link" href="/2019/03/28/create-my-own-gem-based-jekyll-theme.html">
+            Create My Own Gem-based Jekyll Theme
+          </a>
+        </h3><p>I want to customize the <a href="https://github.com/jekyll/minima">Minima</a> theme. Why don’t I just clone the repository and integrate it into my project? Because that way is not easy to maintain. I would very difficult to keep track of the new progress of Minima project. A better way is forking the Minima project and modify it, then use the new theme in my blog site.</p>
+
+</li><li><span class="post-meta">Mar 27, 2019</span>
+        <h3>
+          <a class="post-link" href="/2019/03/27/why-do-i-blog.html">
+            Why Do I Blog
+          </a>
+        </h3><p>I need a way to <a href="https://en.wikipedia.org/wiki/Note-taking">take notes</a> and to keep track of what I have done over time. I want my notes alive in the <a href="https://en.wikipedia.org/wiki/Plain_text">plain text</a> format, which has <a href="http://wiki.c2.com/?PowerOfPlainText">great power</a> (easier to view, maintain, and share).</p>
+
+</li></ul><p>&raquo; <a href="/tags/">More posts...</a></p><p class="feed-subscribe"><svg class="svg-icon orange"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg><a href="/feed.xml">Subscribe</a></p></div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col one-half">
+      <h2 class="footer-heading">Temporal Dead Zone</h2>
+        <ul class="contact-list">
+          <li class="p-name">Alexander Huang</li><li><a class="u-email" href="mailto:alxdhuang@gmail.com">alxdhuang@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col one-half">
+        <p>Alexander Huang&#39;s blog. On programming, physics, mathematics, and literature etc.
+</p>
+      </div>
+
+      <div class="social-links">
+<ul class="social-media-list"><li><a href="https://github.com/alxdhuang" title="alxdhuang"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a href="https://twitter.com/alxdhuang" title="alxdhuang"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg></a></li><li><a href="/feed.xml" title="rss"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg></a></li></ul>
+
+</div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+  
+    <script>
+      const imgs = ['/assets/css/background/asfalt-light.png','/assets/css/background/brick-wall.png','/assets/css/background/bright-squares.png','/assets/css/background/food.png','/assets/css/background/gray-floral.png','/assets/css/background/ice-age.png','/assets/css/background/light-wool.png',];
+      const date = new Date();
+      const index = date.getDay() % imgs.length;
+      document.body.style.backgroundImage = `url('${imgs[index]}')`;
+    </script>
+  
+</html>

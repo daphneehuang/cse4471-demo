@@ -1,0 +1,1156 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Librebits - jordila_@i-ching:~/</title>
+  <meta name="author" content="jordila_">
+
+  
+  <meta name="description" content="En una anterior nota técnica en este blog hablábamos de La fanfarria del Cloud Computing o la última trending technology &hellip;
+Convengamos que ese &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jordila.github.io">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Librebits - jordila_@i-ching:~/" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Librebits - jordila_@i-ching:~/</a></h1>
+  
+    <h2>Bits aleatorios de Software Libre / Libre Software ...</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/06/18/minube-con-owncloud-bye/">miNube Con OwnCloud : Bye,bye Dropbox !</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-06-18T12:08:27-04:00" pubdate data-updated="true">Jun 18<sup>th</sup>, 2015</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>En una anterior nota técnica en este blog hablábamos de <em>La fanfarria del Cloud Computing o la última trending technology</em> &hellip;
+Convengamos que ese mismo concepto que criticamos constructivamente ha facilitado una mejor conviencia entre dispositivos computacionales de diferente naturaleza ( PC, Tablet, teléfono <em>smartphone</em> , etc&hellip; )</p>
+
+<p>El objetivo de este artículo es, desde lo paráctico, desmitificar la idea de <em>la nube</em> como algo etéreo e  <em>inasible</em> . Bajándolo a la tierra. Veremos lo sencillo que resulta liberarnos de servicios que pueden atentar contra la <a href="https://owncloud.com/why-on-premise/">seguridad  y privacidad de nuestros datos</a>, como es el caso de <em>Dropbox</em> , el servicio de computación <em>cloud</em>  más popular.</p>
+
+<p>Como reza Wikipedia <a href="https://es.wikipedia.org/wiki/Owncloud">OwnCloud</a> es una aplicación de <em>software libre</em> del tipo Servicio de alojamiento de archivos, que permite el almacenamiento en línea y aplicaciones en línea (cloud computing)</p>
+
+<p>Vayamos con las manos a la masa, y tratemos de instalar <em>nuestra nube</em> en nuestro propio servidor Debian GNU / Linux :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'># Descargamos primero la llave asociada al software  ownCloud :
+</span><span class='line'>
+</span><span class='line'>wget http://download.opensuse.org/repositories/isv:ownCloud:community/Debian_7.0/Release.key</span></code></pre></td></tr></table></div></figure>
+
+
+<p>(NOTA: Interesante sinergia acá, entre openSuse y Debian, en este caso&hellip; en la familia <em>Linux</em> )</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># Agregamos la llave a apt para que pueda validar los ficheros :
+</span><span class='line'>sudo apt-key add - &lt; Release.key
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'># añadimos los  repositorios ownCloud al servicio de builds de openSUSE  a nuestro apt _source lists_ al teclear :
+</span><span class='line'>
+</span><span class='line'>echo 'deb http://download.opensuse.org/repositories/isv:ownCloud:community/Debian_7.0/ /' | sudo tee -a /etc/apt/sources.list.d/owncloud.list</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># Finalmente, actualizamos la base de datos de paquetes e instalamos ownCloud y MySQL:
+</span><span class='line'>sudo apt-get update
+</span><span class='line'>sudo apt-get install owncloud mysql-server
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Configuración MySQL</h3>
+
+<p>Vamos a configurar nuestro servidor ownCloud para que disfrute de una base de datos MySQL más robusta, en vez de la implementación SQLite por defecto. Para ello debemos configurar MySQL en primera instancia.</p>
+
+<p>Teclear los siguientes comando para inicializar la base de datos y hacer más seguro el sistema:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo mysql_install_db
+</span><span class='line'>sudo mysql_secure_installation</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Deberás introducir la clave de administración seleccionada durante la instalación de MySQL. Entonces se te preguntará por los ajustes de seguridad. Presiona <em>Enter</em> y selecciona <em>yes</em> para todos los parámetros excepto el primero (relativo a cambiar de nuevo la contraseña <em>root</em>)</p>
+
+<p>Ahora, identificate en  MySQL como usuario <em>root</em> tecleando:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mysql -u root -p</span></code></pre></td></tr></table></div></figure>
+
+
+<p>De nuevo, serás preguntado por la contraseña de administración MySQL.</p>
+
+<p>Crea una base de datos mediante el comando :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>CREATE DATABASE owncloud;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Crea y asigna privilegios al nuevo usuario MySQL para manejar la base de datos de operaciones de  ownCloud:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>GRANT ALL ON owncloud.* to 'owncloud'@'localhost' IDENTIFIED BY 'select_database_password';</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Salir de MySQL tecleando:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>exit</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Sólo queda proceder a la instalación guiada, accediendo a la carpeta ( <em>DocumentRoot</em> ) que alberga <em>tu nube</em> ownCloud</p>
+
+<p>Que lo disfrutes libremente y sin chusmeos.</p>
+
+<h3>Recursos :</h3>
+
+<ul>
+<li><p>Documentación en <a href="http://owncloud.com">Owncloud</a></p></li>
+<li><p><a href="https://www.digitalocean.com/community/tutorials/how-to-install-owncloud-and-configure-owncloud-apps-on-an-ubuntu-12-04-vps">How To Install OwnCloud and Configure OwnCloud Apps on an Ubuntu 12.04 VPS</a></p></li>
+</ul>
+
+
+<h3>Bonus:</h3>
+
+<p>No nos queda más que instalar certificados SSL (si no lo habíamos hecho ya) que nos faciliten un diálogo seguro con nuestro servidor OwnCloud, mediante <em>https</em> &hellip; pero eso ya será probablemente motivo de otro post / nota técnica en este mismo blog.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/05/09/en-un-principio-fue-la-linea-de-comandos-dot-dot-dot-gnu-slash-linux-bash/">En Un Principio Fue La Linea De comandos-&#8230;GNU/Linux-Bash</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-05-09T06:35:47-04:00" pubdate data-updated="true">May 9<sup>th</sup>, 2015</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Estos días he aprovechado cierto receso para enriquecer mi relación con mi sistema GNU / Linux . Esto es, hablarle, preguntarle&hellip; más y hacer menos <em>click</em> . Buscando una comunicación más fluida y harmoniosa.</p>
+
+<p>Este proceso de enriquecimiento de la interacción se produce tras la inspiradora lectura de <a href="https://es.wikipedia.org/wiki/En_el_principio_fue_la_l%C3%ADnea_de_comandos">&ldquo;En un principio fue la línea de comandos&rdquo;</a></p>
+
+<p>Nos da la clave de como algunos sistemas operativos (privativos, principalmente) nos han querido hacer creer que la terminal o línea de comando ( CLI ) era un vestigio del pasado. Con atractivos ( o no tanto) interfaces gráficos, bajo ese prisma, se quiere ocultar lo innegable: los sistemas computacionales son complejos. Como dice Eben Moglen,en cierto modo , el abuso del uso del ratón ( <em>mouse</em> ) deriva en una espasmódica relación del usuario con el sistema. <em>A golpe de ratón</em> .
+La interacción está, en ese caso, mediada por una capa de abstracción que no es posible más que mediante la asunción ( imposición? ) de ciertos valores y parámetros por defecto. El diseñador de la interfaz gráfica (GUI) ha tenido que, necesariamente, simplificar y realizar bastantes suposiciones para asumir <em>valores por defecto</em> .</p>
+
+<p>Al dejar de controlar esos detalles en pro de la simplicidad, de &ldquo;hacernos la vida más fácil&rdquo; como usuarios, estamos renunciando no sólo a todo el potencial de nuestro (?) sistema, sino también a la posibilidad de una interacción libre de intermediarios.</p>
+
+<p>Cuando era adolescente y cayó en mis manos el primer teclado <em>Unix</em> no en entendía nada, sentí temor&hellip; quería salir corriendo a por mi ratón! j,aj! Éste ha sido un hermoso proceso,&hellip; de reencuentro y reconciliación. a hablarle a mi computadora GNU / Linux&hellip; Pasé de hablarle con gruñidos a base de click, a susurrarle en la línea de comandos (Bash). Sintiendo el latido y el repiqueteo de las teclas&hellip;</p>
+
+<p>Se encuentra fácilmente en la red de redes,  LinuxCommand-TLCL.pdf, muy inspirador, ya en lo práctico, en este sentido. Estoy leyendo y practicando con él. Bienvenidos al apasionante mundo del GNU / Linux <em>Bash</em> <em>Shell</em> .</p>
+
+<p>BONUS : por ejemplo, acabo de aprender como navegar más fácilmente entre directorios desde la línea de comandos,</p>
+
+<p>Teclear toda la ruta del directorio con <em>cd</em> consume tiempo. Puedes simplemente usar <em>pushd</em> o <em>popd</em> para commutar hacia y desde dos directorios.
+Cuando estás en en un cierto directorio y deseas commutar a otro directorio, en vez de <em>cd</em> usa <em>pushd</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ pushd /path/to/new/directory</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Usando este comando, la ruta del directorio original será recordada para usar de vuelta mediante <em>popd</em> .Al acabar de trabajar en el nuevo directorio, para volver al directorio original, simplemente teclea :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ popd</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Fuente: <a href="http://www.linuxandlife.com/2013/04/some-tips-to-use-command-line-faster.html">http://www.linuxandlife.com/2013/04/some-tips-to-use-command-line-faster.html</a></p>
+
+<p>Bonus :</p>
+
+<p>Mejor no hacer como yo &hellip; no esperar a la edad adulta computacional para aprender a manejarse en la línea de comandos, ja,ja! Aquí tienen un par de pdfs de intro y con los motivos por los que es buena cosa aprender a manejarse en las “pantallas negras” de buen principio</p>
+
+<p><a href="https://elbinario.net/wp-content/uploads/2015/01/001-Intro.pdf">001-Intro.pdf</a></p>
+
+<p><a href="https://elbinario.net/wp-content/uploads/2015/01/002-Motivos.pdf">002-Motivos.pdf</a></p>
+
+<p>Cortesía de <a href="http://elbinario.net">Elbinario.net</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/12/04/a-vueltas-con-linux-containers-lxc-ii/">A Vueltas Con LinuX Containers (LXC) II</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-12-04T11:50:00-05:00" pubdate data-updated="true">Dec 4<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>"Los servidores lo tuvieron todo. Los clientes, nada. Bienvenido al Cloud Computing"
+</span><span class='line'>(Eben Moglen , Free Software Foundation)</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>Lo prometido es deuda</em> &hellip; reza el dicho popular.</p>
+
+<p>En un <a href="https://jordila.github.io/blog/2014/11/02/a-vueltas-con-linux-containers-lxc-i/">post anterior</a> nos zambullimos en la tecnología de virtualización ( subyacente a la <em>trendy</em>  y  cacareada   <em>Cloud</em> )
+En otras palabras, la Internet de siempre con una capa de abstracción de hardware : <em>LinuX Containers LXC</em> .</p>
+
+<h2>La fanfarria del <em>Cloud Computing</em>  o la última <em>trending technology</em></h2>
+
+<p>Con ese mero argumento, una vez más las grandes corporaciones (que conozco por experiencia) del sector infocomunicacional  <em>venden</em> servicios que realmente los clientes no necesitan. Les encadenan a sus servidores, que se acumulan en campos de concentración de hardware, ventilados, aislados y con las máximas medidas de seguridad. Es la economía de escala &hellip; la misma que está agotando al Planeta que habitamos.</p>
+
+<p>En Canadá algunas empresas se jactan de mantener esas granjas de servidores virtualizados de forma sostenible y limpia (!). Sin derroche de energía (que consumen cientos o miles de procesadores corriendo en paralelo). Aprovechan, dicen, las corrientes de aire frío (ártico). En fin.</p>
+
+<h2>(pseudo)Virtualizando Debian en un  Debian GNU/Linux (host)</h2>
+
+<p>Disquisiciones aparte. Tratemos de crear un contenedor <em>Debian</em> albergado en nuestro <em>Debian GNU/Linux</em> (host del contenedor), o computadora-laptop de trabajo.</p>
+
+<p>Por no repetir lo que viene detallado en los tutoriales referenciados, solo diré que he encontrado problemas con <em>LXC</em> en mi Debian <em>GNU/Linux</em> Jessie , siguiendo los pasos de la <a href="https://wiki.debian.org/LXC#Installation">Wiki de Debian</a>.</p>
+
+<p>Problemas que también encontró el autor de <a href="http://feeding.cloud.geek.nz/posts/lxc-setup-on-debian-jessie/">LXC setup on Debian Jessie</a>, gracias al cual pude por fin cumplir mi promesa de hacer correr mis máquinas (pseudo)virtuales no sólo en <em>Ubuntu</em> , sino también en mi <em>Debian GNU/Linux</em>(a continuación me fijaré en la parte que más útil me fue). A él mi agradecimiento.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>// Crear un  contenedor Debian (en /var/lib/lxc/) es simple:
+</span><span class='line'>
+</span><span class='line'># sudo MIRROR=http://http.debian.net/debian lxc-create -n sid64 -t debian -- -r sid -a amd64
+</span><span class='line'>
+</span><span class='line'>// Inicia o para el contenedor de la siguiente forma :
+</span><span class='line'>
+</span><span class='line'># sudo lxc-start -n sid64 -d
+</span><span class='line'>
+</span><span class='line'># sudo lxc-stop -n sid64
+</span><span class='line'>
+</span><span class='line'>// Puedes encontrar la dirección IP asignada al contenedor, recibida por el Servidor  DHCP tecleando, y su estado 
+</span><span class='line'>
+</span><span class='line'># sudo lxc-ls --fancy
+</span><span class='line'>
+</span><span class='line'>..
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>A partir de aquí podemos seguir manejando nuestros LinuX Containers, <a href="https://jordila.github.io/blog/2014/11/02/a-vueltas-con-linux-containers-lxc-i/">como veníamos haciendo en el anterior post relacionado</a></p>
+
+<h2><em>Docker</em> ?  &ldquo;It&rsquo;s LinuX Containers , stupid !&rdquo;</h2>
+
+<p>En lo práctico,    pongamos que para desarrollar una aplicación web determinada necesitamos un <em>stack</em> de software    (p.ej.: el clásico Linux+Apache+MySQL &ndash;  LAMP) en unas versiones determinadas, por requisitos del entorno (p.ej.: <em>PHP 5.3 y  MySQL 5.1</em> ).    Y sólo puede ser de este modo. En vez de tener que rehacer  todo el stack de nuestro servidor de pruebas nos bastará con generar un <em>LinuX Container</em> que cumpla esos requisitos. El único condicionante es la base del stack. Está sujeta al <em>kernel</em> del sistema host (en mi caso, el de Debian 8 <em>GNU/Linux</em> )  Además, podré desarrollar  cómodamente de forma <em>ágile</em> (ligera e iterativa), pues puedo usar para ello el comando <em>lxc-clone</em> para armar tantas maquetas o prototipos como requiera. Por ejemplo,</p>
+
+<ul>
+<li><p>container LXCO = Debian GNU/Linux server</p></li>
+<li><p>container LXC1 =  Debian GNU/Linux server + AMP</p></li>
+</ul>
+
+
+<p>(que podré clonar para otras aplicaciones que necesiten el mismo <em>stack</em> , p,ej. el <em>LMS Moodle</em> , <em>Drupal CMS</em> &hellip;)</p>
+
+<ul>
+<li><p>container LXC2= LAMP + CMS Drupal</p></li>
+<li><p>etc &hellip; (así sucesivamente)</p></li>
+</ul>
+
+
+<p><em>BONUS</em> : De paso he podido hacer una primera prueba satisfactoria con <em>Docker</em> , que me permitiría importar y exportar fácilmente aplicaciones a partir de un <em>LinuX Container</em> y bla,bla&hellip;  pero de eso quizás hablemos en otro nota de este blog más adelante&hellip;</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/11/24/openshift-paas/">Openshift PaaS, Drupal CMS Y Git</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-11-24T10:19:37-05:00" pubdate data-updated="true">Nov 24<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Vamos a bucear un poco más en la PaaS de Red Hat Cloud (RHC).Openshift, El &lsquo;Cloud&rsquo; libre para todos y todas (?).</p>
+
+<p>Para ello hemos de cicunscribirnos a los parámetros del entorno que nos ofrece actualmente, a efectos de versionado, etc&hellip;
+Para lo  que nos ocupa, una típica instalación LAMP (Linux+Apache+MySQL+Php) como es <em>Drupal CMS</em>, esto es :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Php v.5.4
+</span><span class='line'>MySQL v.5.5 ...</span></code></pre></td></tr></table></div></figure>
+
+
+<p>que es lo que <em>RHC</em> nos ofrece al momento de escribir estas palabras. Recordar que podemos disfrutar de tres instancias <em>libre y gratuitas</em> en  nuestra cuenta <em>Openshift</em> . Sí, para siempre.</p>
+
+<p>Vamos seguido el paso a paso de creación de la cuenta (remota) en el servidor RHC y la instalación de la herramienta (CLI) cliente <em>rhc</em> en local (bien detallado en el tutoria oficial).</p>
+
+<p>Sigamos ahora los pasos del <a href="https://github.com/openshift/drupal-quickstart">Drupal Quickstart para RHC oficial</a> &hellip; A ver si somos capaces de encajar las piezas del puzzle.</p>
+
+<p>[..]</p>
+
+<p>Sea como fuere, cómodamente desde el panel de control de <em>Openshift(RHCloud)</em> , o mediante nuestro nuevo flamante <em>CLI</em> <em>rhc</em> en <em>Bash</em></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>//  Drupal-quickstart  - CLI rhc
+</span><span class='line'># rhc app create drupal php-5.4 mysql-5.5 cron</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Nos permite disponer de un completo entorno de desarrollo ( soporta <em>Git</em> por defecto) de forma rápida y sencilla. En mi caso por ejemplo, armé rápidamente una instancia de <em>Drupal8</em> para ir &lsquo;jugando&rsquo; &hellip; en cuestión de minutos.</p>
+
+<p>KISS &ndash; Keep it Simple Stupid</p>
+
+<p>Bonus : Cómodamente también puedes &lsquo;mapear&rsquo; de forma remota la carpeta con el código de tu desarrollo&hellip; gracias a sFTP, directamente en tu Navegador de archivos preferido ( Nautilus, Thunar&hellip;)</p>
+
+<p>RECURSOS:</p>
+
+<p><a href="https://austin2014.drupal.org/session/openshift-and-drupal-story-true-open-source-collaboration-and-innovation">&ldquo;Openshift and Drupal story true open-source collaboration and innovation&rdquo;</a></p>
+
+<p><a href="https://www.openshift.com/quickstarts/drupal-7">&ldquo;Drupal 7 | Openshift &rdquo;</a></p>
+
+<p><a href="https://github.com/openshift/drupal-quickstart">&ldquo;Drupal-quickstart | Github &rdquo;</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/11/11/multiplica-las-posibilidades-de-drupal-cms-proyectos-sandbox-ej-dot-bootstrap-everywhere/">Multiplica Las Posibilidades De Drupal CMS : Proyectos Sandbox (Ej.: &#8216;Bootstrap Everywhere&#8217;</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-11-11T08:30:29-05:00" pubdate data-updated="true">Nov 11<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h3>Intro</h3>
+
+<p>Lo maravilloso de la mundial y activa comunidad Drupal son cosas como las que siguen&hellip;</p>
+
+<p>Estamos iniciando un proyecto <em>Drupal7</em> en el que <em>Bootstrap</em> theme  puede servirnos
+Hay otros temas más <em>propios</em> de <em>Drupal</em> como <em>Omega</em> , <em>Zen</em> , etc&hellip; que bien podrían servirnos.</p>
+
+<p>Lo interesante de Bootstrap en este caso es, entre otras cosas, que lo hemos manejado en el equipo en otros contextos, y facilita un <em>lenguaje</em> <em>común</em> para las tareas de <em>Theming</em> .</p>
+
+<p> En las que, desde el principio, queremos que nuestro Tema elegido mantenga compatibilidad con módulos <em>Panels</em> y <em>Panel</em> <em>Everywhere</em> .</p>
+
+<p>Pero&hellip; ay! Parece que Bootstrap no la ofrece.</p>
+
+<p>Acudimos entonces a la contribución de <em>mpv</em> , que elaboró una <em>Sandbox</em> para solventar precisamente esta cuestión : <a href="https://www.drupal.org/sandbox/mpv/1719916">Bootstrap Everywhere</a></p>
+
+<p>(un proyecto <em>Sandbox</em> no es más que código Drupal alternativo, que no ha sido empaquetado en un <em>módulo</em> como tal )</p>
+
+<p>Veamos si somos capaces de encajar la piezas del <em>puzzle</em> &hellip;</p>
+
+<h3>Dev</h3>
+
+<p>Drupal 7 Bootstrap Everyhwere sandbox](<a href="https://www.drupal.org/project/1719916">https://www.drupal.org/project/1719916</a>)</p>
+
+<p>by mpv</p>
+
+<p>0.&ndash; En nuestro caso, los pre-requisitos son disponer de <a href="https://www.drupal.org/project/Bootstrap">Bootstrap 2 theme,(ojo, no la v3!)</a> instalado previemente, que es con el cual el proyecto <em>Sandbox</em> _Bootstrap es compatible.</p>
+
+<p>1.&ndash; Así pues  Bootstrap theme   ( las versiones se alinean con las del popular <em>framework</em> , ej.: 7.x-2.2 &lt;&mdash;> Bootstrap 2.3.2 )
+  (activamos &mdash;> default theme , o creamos un sub-theme)</p>
+
+<p>2.&ndash;  habilitamos los módulos <em>Panels</em> y <em>Panels</em> <em>Everywhere</em>  cómodamente via &lsquo;drush dl <module>&rsquo; y &lsquo;drush en <module>&rsquo;</p>
+
+<p>// así tenemos un sitio &lsquo;operativo&rsquo; con contenido aleatorio para test, previamente instalado el módulo <em>devel</em>
+3.&ndash; drush devel generate 20</p>
+
+<p>3.&ndash; seguimos las indicaciones de mpv para instalar, como un tema más,<a href="https://www.drupal.org/sandbox/mpv/1719916">Bootstrap Everywhere</a>
+básicamente el comando &lsquo;git clone &lt;&hellip;>&rsquo;</p>
+
+<h3>Epílogo</h3>
+
+<p>El extenso y rico ecosistema de software y módulos de <em>Drupal</em> <em>CMS</em> se ve multiplicado por los proyectos <em>Sandbox</em> . De esta forma, el Content Management Systema se construye por capas :</p>
+
+<p>1.&ndash; core  &ndash; núcleo  ( <em>Do no hack the core!</em> )
+2.&ndash; contrib modules ( los más populares, como <em>Views</em> acaban integrándose en el core )
+3.&ndash; proyectos Sandbox , &lsquo;no modularizados&rsquo;&hellip; que acaban multiplicando las posibilidades</p>
+
+<p>Gracias <em>mpv</em></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/11/10/aprendizajes-de-una-actualizacion-remota-de-sistema-fallida-screen/">Aprendizajes De Una Actualización Remota De Sistema Fallida: &#8216;Screen&#8217;</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-11-10T07:58:05-05:00" pubdate data-updated="true">Nov 10<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Estamos conectados al servidor remoto en producción por sesión <em>SSH</em> .</p>
+
+<p>Decidimos que es hora de actualizar los paquetes de nuestro sistema servidor ( Debian GNU / Linux ) en el que alojamos los flamantes últimos desarrollos web de nuestros clientes para disfrute del gran público internauta.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>//secuencia actualización de repositorios fuente y paquetes
+</span><span class='line'># apt-get update && upgrade</span></code></pre></td></tr></table></div></figure>
+
+
+<p>El sensible proceso en lote se inicia normalmente&hellip;</p>
+
+<p>CRASH! Ocurre&hellip; <em>Broken</em> <em>pipe</em> , por el motivo que fuera perdimos la conexión remota en el peor momento.</p>
+
+<p>Tardamos un tiempo en recuperar la conexión <em>SSH</em> , lo que hace que se vea afectado el proceso en el momento de la interacción: que nos solicitaba si queríamos mantener no determinados archivos de configuración del sistema servidor Web  <em>LAMP</em> , justo en el momento del CRASH! .</p>
+
+<p>En la reconexión algo ,se ve enseguida, no anduvo . Chequeamos la disponibilidad de los servicios web alojados: <em>NOT FOUND</em> . Desastre confirmado.
+En un primer diagnóstico quedaron afectados (desconfigurados) los paquetes <em>MySQLServer</em> &hellip; bla,bla.</p>
+
+<p>Inspiramos.Expiramos.</p>
+
+<p>Acudimos a la comunidad, como no&hellip; via IRC. En <em>#Debian</em> lo primero que nos sugieren es que deberíamos usar <em>siempre</em> la utilidad <a href="http://rz0r.blogspot.com.ar/2007/12/screen-otra-util-herramienta-en-linux.html">screen</a> para este tipo de operaciones <em>( apt-get upgrade )</em> críticas.</p>
+
+<p>Lección aprendida.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/11/02/a-vueltas-con-linux-containers-lxc-i/">A Vueltas Con LinuX Containers ( LXC ) I</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-11-02T16:00:04-05:00" pubdate data-updated="true">Nov 2<sup>nd</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Tras unos días de vacaciones hemos vuelto a los teclados cono energías y fuerzas renovadas.</p>
+
+<p>Esta vez vamos a emprender el viaje a la virtualización de entornos. Hasta ahora nuestra experiencia se reducía a algunos contactos con <em>VirtualBox</em>. Así lograbas una  completa máquina virtual en la que correr otros sistemas operativos y/o entornos, que podrían ser diferentes al tuyo (Host).</p>
+
+<p>La experiencia fue agridulce, pues si bien es un adelanto poder disponer de &lsquo;entornos virtuales&rsquo; en tu computadora, se hacía bastante pesado, el proceso de creación de la máquina virtual (consumiendo muchos recursos), por no hablar del proceso de exportar luego el trabajo realizado en ello.</p>
+
+<p>Últimamente se habla mucho en la red de redes de <a href="http://www.docker.com">Docker</a>, que como reza la entrada correspondiente en Wikipedia <em>es un proyecto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores software, proveyendo de una capa adicional de abstracción y automatización de virtualización del sistema operativo en Linux</em></p>
+
+<p>Mmh&hellip; what? Pues que ahora podemos fácilmente empaquetar en contenedores nuestros entornos de desarrollo (virtualizados) e intercambiarlos sencillamente como cromos entre servidor-PC- portátil etc, crearlos, clonarlos, destruirlos con una línea de comando&hellip; ? Veamos&hellip;</p>
+
+<p>El caso es que <em>Docker</em> basa su potencia en <a href="http://es.wikipedia.org/wiki/LXC">LXC</a> :<em>LinuX</em> <em>Containers</em>. Así que &hellip; principiemos por el principio.</p>
+
+<p>Mi agradable sorpresa ha sido el comprobar como sencillamente puedo crear una máquina (pseudo) virtual , con unos pocos comandos, en mi computadora. Esa (pseudo) máquina hábilmente, gracias a <em>LXC</em> reutiliza el mismo <em>Kernel</em> de la máquina que la alberga (Host). Ecología de recursos. De ahí lo de <em>pseudo</em> .</p>
+
+<p>El caso es que uno de los pocos contras del proceso con <em>LXC</em>  es que el nuevo sistema (pseudo) virtualizado (obviamente) debe basarse en el mismo Kernel de la máquina Host.</p>
+
+<p>El primero que me habó de <em>LXC</em> fue mi amigo <em>hk</em> &hellip; compartiendo conmigo el concepto de como uno puede usar esta técnica para correr diferentes servicios interconectados entre sí via IP (paralelamente en el mismo Host).</p>
+
+<p>Seguiré los pasos de <a href="https://www.stgraber.org/2013/12/20/lxc-1-0-your-first-ubuntu-container/">Stéphane Graber</a> para, este vez desde Ubuntu 14.04 (el <em>hijo</em> díscolo ) en vez de Debian Jessie (su <em>padre</em>), por comodidad.</p>
+
+<p>En un alarde de originalidad, copio y pego los comandos, y los adapto a mi gusto, traduciendo los comentarios que clarifican los pasos a dar .</p>
+
+<p>Inspiramos.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># Crear "p1" : container usando el template "ubuntu" y la version de Ubuntu
+</span><span class='line'># and architecture as the Host (mi compu _real- ). Con "-- --help" listamos todas las opciones all available options.
+</span><span class='line'>
+</span><span class='line'>$ sudo lxc-create -t ubuntu -n p1
+</span><span class='line'>
+</span><span class='line'># Iniciar el container (en background)
+</span><span class='line'>$ sudo lxc-start -n p1 -d
+</span><span class='line'>
+</span><span class='line'># Entrar al container en una de los siguientes formas
+</span><span class='line'>
+</span><span class='line'>##  'Attach' a la consola del container' (ctrl-a + q para detach)
+</span><span class='line'>$ sudo lxc-console -n p1
+</span><span class='line'>
+</span><span class='line'>## Bash directamente en el container (cortocircuitando el login de consola), requiere &gt;= 3.8 kernel
+</span><span class='line'>$ sudo lxc-attach -n p1
+</span><span class='line'>
+</span><span class='line'>## via SSH
+</span><span class='line'>$ sudo lxc-info -n p1
+</span><span class='line'>$ ssh ubuntu@&lt;ip según lxc-info&gt;
+</span><span class='line'>
+</span><span class='line'># Stop container, de una de las siguientes formas
+</span><span class='line'>## Stop desde él mismo
+</span><span class='line'>$ sudo poweroff
+</span><span class='line'>
+</span><span class='line'>## Stop limpiamente desde 'fuera'
+</span><span class='line'>$ sudo lxc-stop -n p1
+</span><span class='line'>
+</span><span class='line'>## Kill desde 'fuera'
+</span><span class='line'>$ sudo lxc-stop -n p1 -k</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Bien..
+Expiramos.
+Ya armamos nuestro primer, simple y ligero contenedor Linux &ndash; <em>LXC</em> .</p>
+
+<p>Como dice Stéphane,  &ldquo;habrás notado que habiualmente todo funciona tal cual en Ubuntu (en Debian GNU/Linux hay que usar algunos comandos más&hellip; parece, para los <em>cgroups</em> y la parte de red&hellip; )&rdquo;
+&ldquo;los kernels Ubuntu soportan todas las facilidades que requiere <em>LXC</em> , y los paquetes configuran un <em>bridge</em> y servidor <em>DHCP</em> que los containers usan por defecto&rdquo; &hellip; Todo ello, obvio, configurable y bla,bla&hellip;</p>
+
+<p>Parece que trabaja en Canonical&hellip; ;&ndash;)
+(más adelante trataremos de repetir el proceso en Debian GNU / Linux (!), pero eso será en otro <em>post</em> &hellip; )</p>
+
+<p>Vayamos por segundo <em>container</em> que albergue querido Debian. Básicamente lo que haremos será usar otro <em>template</em> de container.
+Es decir :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>## creamos el container debian, forzando la arquitectura 
+</span><span class='line'>$ sudo lxc-create -t debian -n p2 -- -a i386
+</span><span class='line'>
+</span><span class='line'>## iniciamos el container debian 32bits
+</span><span class='line'>$ sudo lxc-start -n p2 -d
+</span><span class='line'>
+</span><span class='line'>## lo chequeamos,
+</span><span class='line'>
+</span><span class='line'>$ sudo lxc-info -n p2
+</span><span class='line'>Name:           p2
+</span><span class='line'>State:          RUNNING
+</span><span class='line'>PID:            5828
+</span><span class='line'>IP:             10.0.3.118
+</span><span class='line'>CPU use:        1.88 seconds
+</span><span class='line'>BlkIO use:      49.66 MiB
+</span><span class='line'>Memory use:     85.56 MiB
+</span><span class='line'>KMem use:       0 bytes
+</span><span class='line'>Link:           vethV01VLC
+</span><span class='line'> TX bytes:      1.79 KiB
+</span><span class='line'> RX bytes:      5.69 KiB
+</span><span class='line'> Total bytes:   7.48 KiB
+</span><span class='line'>
+</span><span class='line'>## notar que, para acceder a él si es necesario por esta via, obtenemos su dirección IP
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>NOTA: los diferentes <em>containers</em> , dijimos, tendrán siempre de base el mismo Kernel, que comparte con el Host que los alberga. En nuestro caso</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>## Verificamos el sistema y Kernel del Host (común a los containers)
+</span><span class='line'>$ uname --all
+</span><span class='line'>Linux RainbowWarrior 3.13.0-37-generic #64 [...]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Bla,bla &hellip; para mi uso y propósito personal, instalaré la pila &ndash; <em>stack</em>  LAMP (Linux+Apache+MySQL+Php). Voilà.
+Ya tengo mi servidor Web personal de bolsillo ultraligero&hellip;</p>
+
+<p>NOTA2: en línea lo siguiente más simple probablemente sea la Raspberry Pi con <a href="http://www.raspbian.org/">Raspbian</a>  ;&ndash;)</p>
+
+<p>Es por ello que nos viene como un guante el siguiente comando para procesar un clon.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>## pre-condición al clonar : el _container_ a clonar deber estar en stop
+</span><span class='line'>$ sudo lxc-stop -n p2
+</span><span class='line'>
+</span><span class='line'>## clonamos 'p2' , nuestro 2º container Debian mínimo con LAMP
+</span><span class='line'>$ sudo lxc-clone -o &lt;container original: 'p2'&gt; -n &lt;nombre del nuevo container&gt;
+</span><span class='line'>
+</span><span class='line'>## en nuestro caso, parametrizando lo anterior ..., y lo llamamos lamp1
+</span><span class='line'>$ sudo lxc-clone -o p2 -n lamp2</span></code></pre></td></tr></table></div></figure>
+
+
+<p>A estas alturas del partido&hellip; tenemos 3 instancias <em>LXC</em> en juego</p>
+
+<p> 1.&ndash; p1     :  Ubuntu  clon del sistema <em>Host</em> común</p>
+
+<p> 2.&ndash; p2     :  Debian GNU/Linux</p>
+
+<p> 3.&ndash; lamp2  :  Debian GNU/Linux + LAMPhp + phpMyAdmin &hellip;</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>##podemos comprobar el estado operativo de cada container LXC
+</span><span class='line'>$ lxc-ls --fancy</span></code></pre></td></tr></table></div></figure>
+
+
+<p>&hellip; al que, por ejemplo, puedo acceder en</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>http://10.0.3.85/phpmyadmin/</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Voilà.</p>
+
+<p>:&ndash;)</p>
+
+<p>BONUS : <a href="http://lxc-webpanel.github.io">LXC Web Panel para Ubuntu</a> desde el que poder cómodamente gestionar todos los containers LXC &hellip;</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/10/03/un-buscador-para-mi-sitio-web-estatico/">¿Un Buscador Para Mi Sitio Web (Estático)?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-03T09:31:57-04:00" pubdate data-updated="true">Oct 3<sup>rd</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Cuando inicié mi último proyecto me decanté por el reto de desarrollar un sitio Web estático para un fondo audivisual de 20 videos y 400 bellas imágenes de la Patagonia.
+Sopesé los pros y contras, frente alternativas CMS como Drupal. De hecho estuve varios meses desarrollando maquetas en ese completo CMS. Completo y complejo.
+Con el tiempo y el conocimiento de los últimos avances en <em>HTML5 y CSS3</em>&hellip; decidí apostar por la filosofía no-CMS. &lsquo;Delegando&rsquo; en servicios Web o pre-desarrollo en mi sistema GNU/Linux las capacidades que mi &lsquo;CMS no-CMS&rsquo; iba a echar en falta.</p>
+
+<p>En (casi) todos los aspectos, el desarrollo salió ganando&hellip; El Video y la imagen se manejan con gran sencillez en <em>HTML5</em> . Puedes armar tu &lsquo;YouTuVe&rsquo; y Flickr con facilidad. Una hermosa galería / carousel por acá&hellip; y Voilà!</p>
+
+<p>Obviamente la contrapartida es el procesado, indexado de las imágenes etc&hellip; Nada que un script <em>GNU/Linux</em> y alguna buena librería como <em>FFMPEG</em> no pueda solventar.</p>
+
+<p>Reconozco que no evalué bien el aspecto del buscador de contenidos propio del sitio. Obviamente el sitio web estático no puede beneficiarse de la potencia (a cambio de mayor complejidad) de una base de datos que indexe el contenido a medida que se <em>sube</em> &hellip;</p>
+
+<p>Llegados a ese punto, la primera y poco elaborada alternativa es usar, como decíamos servicios de terceros.</p>
+
+<p><em>Google Custom Search</em> &hellip; desde luego es el mejor buscador. Si bien, como es sabido en la era &ldquo;Post Snowden&rdquo;, poco o nada respetuoso con la privacidad. Ofrecen un servicio en el que (a partir de ) 100 U$S retiran la insidiosa publicidad de los resultados de búsqueda. Pasemos página</p>
+
+<p>El buscador <a href="https://duckduckgo.com/search_box">DuckDuckGo</a> ofrece acá la alternativa en el sentido de la privacidad. Principalmeente, por lo que entiendo, se nutre de resultados de búsqueda de <em>Bing</em> y <em>Yahoo!</em> principalmente &hellip; &lsquo;anonimizando&rsquo; la búsqeda.
+Tras algunas pruebas, resulta muy sencillo re-utilizar este simpático buscador. Pero los resultados no son los esperados&hellip;
+( en su #IRC me dicen que es cuestión de &lsquo;moverse&rsquo; por las diferentes redes sociales.. para que así los mencionados motores de búsqueda acaben &lsquo;encontrándonos&rsquo;).</p>
+
+<p>Así pues, si no queremos depender tanto de terceros&hellip; tendremos que ser más imaginativos&hellip;</p>
+
+<p>Buscando, buscando&hellip; por los caminos del <em>software-libre</em> encontré  <a href="http://www.tipue.com/search/">TipueSearch</a> &hellip; ¿será lo que necesitamos?</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/09/26/drupal-harmonizando-los-modulos-panels/">Drupal : Harmonizando Los Módulos Panels</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-26T06:47:48-04:00" pubdate data-updated="true">Sep 26<sup>th</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Iniciamos un nuevo proyecto Web.</p>
+
+<p>En este caso nos decantamos por Drupal, dado que el cliente debe ser capaz de autogestionar la edición de contenidos del sitio con cierta facilidad. Convengamos que en un escenario así, Drupal sobresale por su interfaz. Ello nos facilita la decisión estratégica en este caso, por encima de otras consideraciones, como la <em>ligereza</em> y <em>agilidad</em> de las herramientas de desarrollo escogidas.</p>
+
+<p>Bien, adelante con Drupal CMS. Y en que entorno&hellip; Surje la propuesta de usar Bootstrap, en cuanto al <em>theming</em>  (diseño)&hellip;por aquello  de trabajar en un <em>lugar común</em> en el equipo. Usaremos también los módulos Drupal <em>Panels</em> y <em>PanelEverywhere</em> . No tengo experiencia en ellos&hellip; así que me despierta la curiosidad su funcionamiento. Parece que facilitan enormemente el maquetado web, y de forma muy visual.</p>
+
+<p>Mmh&hellip; y como se cocina todo esto en su conjunto ?</p>
+
+<p>La apasionada comunidad drupal (una vez más) acude a nustro rescate. Los compañeros de <a href="http://gcoop.coop">Gcoop</a> parece que han trabajado este tema precisamente, a fondo. Creándose su propio  Bootstrap-Panels-Everywhere&hellip;</p>
+
+<p>En chat reciente me cuentan que siguen usándolo casi un año después&hellip; Desde nuesra ignorancia, como <em>novatos</em> que somos, veamos pues si logramos que nos sea de utilidad a nosotros también. Tendremos que poner todo nuestro empeño.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/09/21/gh-pages-publicar-sencillamente-muestras-de-tu-proyecto/">Gh-pages : Publicar Sencillamente Muestras De Tu Proyecto</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-21T06:52:42-04:00" pubdate data-updated="true">Sep 21<sup>st</sup>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>En muchas ocasiones simplemente requieres de una forma sencilla de publicar muestras de un proyecto web ágilmente. O quizás publicar información relativa al mismo (con una demo), o documentación&hellip;
+Conectarse al servidor en el que publicas los trabajos <em>acabados</em> , crear el servidor virtual <em>Apache</em> (Vhost), reiniciarlo&hellip;.bla,bla.
+Tedioso.</p>
+
+<p><em>Para ese viaje no nos hacían falta esas alforjas, Sancho&hellip;</em> (diría Don Quijote)</p>
+
+<p>Si usas repositorios de desarrollo web en <em>Github.com</em>, hay una alternativa muy cómoda, una vez uno se ha acostumbrado a trabajar con el flujo <em>git</em> (ver posts anteriores).</p>
+
+<p>La esencia del funcionamiento de <em>gh-pages</em> está en  definir una rama (<em>branch</em>) que alojará aquello que queramos publicar asociado al proyecto. Cuando hagamos el</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ git push origin gh-pages</span></code></pre></td></tr></table></div></figure>
+
+
+<p>correspondiente, <em>Github</em> se encargará de publicarlo, relacionándolo a nuestra cuenta personal(o de organización) en diferentes posibilidades según elijamos en cuanto al nombre de dominio (DNS). Inmediatamente podemos mostrar el resultado al mundo desde él.</p>
+
+<p>No voy a entrar en el detalle operativo, en el mismo <em>Github</em> se ofrece un tutorial y documentación muy ilustrativo de como proceder, <a href="https://pages.github.com">paso a paso, acá</a></p>
+
+<p>Como dicen, simplemente <em>edita, push y tus cambios ya son públicos</em> en Internet.</p>
+
+<p><a href="http://t.co/GkocIhUsnM">Oli nos cuenta como adaptar el flujo de trabajo de ambas ramas</a>  <em>master</em> y <em>gh-pages</em> de forma síncrona.</p>
+
+<p>Actualmente, por ejemplo, estoy trabajando acá :</p>
+
+<p><a href="https://github.com/jordila/CSS3-Accordion">https://github.com/jordila/CSS3-Accordion</a></p>
+
+<p>Aunque probablemente, si transcurre mucho tiempo desde el día de hoy, ese proyecto haya mutado&hellip; Así que prueba a ver este,</p>
+
+<p><a href="http://rendro.github.io/CSS3-Accordion">http://rendro.github.io/CSS3-Accordion</a></p>
+
+<p>Que es el original, del cual hice el <em>fork</em> . O este otro.</p>
+
+<p><a href="https://blueimp.github.io/Gallery/">https://blueimp.github.io/Gallery/</a></p>
+
+<p>De hecho ese mismo mecanismo es en el que se basa la publicación de este Blog que estás leyendo. Uso <a href="http://octopress.org">Octopress</a>. Basado en la tecnología de publicación <em>Jekyll</em>. La misma que usa el propio <em>Github.com</em> para sus páginas.</p>
+
+<p><em>Bonus</em> : para asociar documentación a un proyecto, recomiendo el uso de la <em>wiki</em> que nos ofrece <em>Github.com</em>. De forma muy cómoda y sencilla podemos ir desarrollándola, también mediante un flujo de trabajo <em>git</em> en formato <em>markdown</em> . El repositorio <em>wiki</em> del proyecto convivirá en paralelo con nuestro código. Siendo ambos distinguibles así, a la hora de <em>clonarlos</em> en tu compu localmente :</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/TU_USUARIO/TU_REPOSITORIO.wiki.git    
+</span><span class='line'>
+</span><span class='line'># clona tu wiki localmente
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>git clone https://github.com/TU_USUARIO/TU_REPOSITORIO
+</span><span class='line'>
+</span><span class='line'># clona tu repositorio localmente
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/posts/2">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>&#8230;as in freedom</h1>
+  <a href="http://www.fsf.org/register_form?referrer=12001"><img
+src="http://static.fsf.org/nosvn/associate/fsf-12001.png" alt="[FSF
+Associate Member]" /></a>
+</section>
+
+<section>
+ <img style="margin:0px auto; display:block"  src="https://dl.dropboxusercontent.com/u/18889627/Twitter-avatar_100x.png" alt="jordila + GNU/Linux" />
+</section>
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/06/18/minube-con-owncloud-bye/">miNube Con OwnCloud : Bye,bye Dropbox !</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/05/09/en-un-principio-fue-la-linea-de-comandos-dot-dot-dot-gnu-slash-linux-bash/">En Un Principio Fue La Linea De comandos-&#8230;GNU/Linux-Bash</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/04/a-vueltas-con-linux-containers-lxc-ii/">A Vueltas Con LinuX Containers (LXC) II</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/24/openshift-paas/">Openshift PaaS, Drupal CMS Y Git</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/11/multiplica-las-posibilidades-de-drupal-cms-proyectos-sandbox-ej-dot-bootstrap-everywhere/">Multiplica Las Posibilidades De Drupal CMS : Proyectos Sandbox (Ej.: &#8216;Bootstrap Everywhere&#8217;</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/jordila">@jordila</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jordila',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
+    - jordila_ -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

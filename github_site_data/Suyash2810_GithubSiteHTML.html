@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Suyash Awasthi</title>
+    <meta name="author" content="Suyash Awasthi - Developer">
+    <meta name="keywords" content="Suyash, suyash, Suyash Awasthi, Awasthi, Suyash bvucoepune, suyash2810, Suyash2810, Web Developer, Full Stack, Development, coder, Suyash BVP, suyash BVP, website, suyash website, Suyash website, suyash github, suyash 2810, Suyash 2810, Awasthi, site">
+    <meta name="description" content="A Developer, Full-Stack Enthusiast working on small projects and contributing to open source.">
+    <meta property="og:title" content="Suyash Awasthi - suyash2810" />
+    <meta property="og:url" content="https://suyash2810.github.io" />
+    <meta property="og:description" content="A Developer, Full-Stack Enthusiast working on small projects and contributing to open source." />
+    <meta property="og:type" content="website" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="icon" href="https://avatars0.githubusercontent.com/u/42000949?s=460&v=4" type="image/png">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css" type="text/css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse" id="navbar_main">
+        <div class="container-fluid" id="container-fluid">
+            <!-- <div class="slide_menu">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div>
+                            <a href="#" class="close_menu"><i class="fa fa-times fa-5x"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <div class="navbar-header">
+                <div style="z-index: 1200;" data-spy="affix" data-offset-top="80"><a href="#" class="menu_icon"></a></div>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div> -->
+
+            <!-- <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <span class="caret"></span></a>
+
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-heading text-center">Web</li>
+                            <li class="divider"></li>
+                            <li><a href="https://github.com/Suyash2810/Ticket-World">Ticket World</a></li>
+                            <li><a href="https://github.com/Suyash2810/Mail">Mailing Script</a></li>
+                            <li class="divider"></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div> -->
+
+            <nav class="nav navbar-nav navbar-right">
+                <span style="font-size:30px;cursor:pointer;margin-right:10px; margin-left: 10px;color:white;" onclick="openNav()">&#9776;</span>
+            </nav>
+
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#" id="aboutSec">About</a>
+                <a href="#" id="whatIDoSec">What I do?</a>
+                <a href="#" id="projectSec">Projects</a>
+                <a href="#" id="resSec">Responsibility</a>
+                <a href="#" id="contactSec">Contact</a>
+            </div>
+
+            <canvas></canvas>
+
+            <h1>Suyash &nbsp; Awasthi</h1>
+            <h4>Full &nbsp; Stack &nbsp; Developer | Data Security</h4>
+
+            <div class="container-fluid" id="center_menu">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="arrow">
+                            <a href="#" class="fa fa-arrow-down fa-2x" class="down"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid" id="intro_container">
+        <div class="well up" id="intro_well">
+            <div class="row" style="margin-top: 70px;">
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1 col-sm-6 col-sm-offset-3 col-xs-6 col-xs-offset-3">
+                            <img src="https://avatars1.githubusercontent.com/u/42000949?s=400&v=4" alt="" class="img-fluid img-circle img-thumbnail"
+                                id="image_intro">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-md-offset-1">
+                    <br><br>
+                    <h2 id="intro_head">Hello and Welcome!</h2>
+                    <br>
+                    <hr style="width: 35px;border-bottom: 1px solid gray;">
+                    <br>
+                    <h2>I am Suyash Awasthi.</h2>
+                    <br><br>
+                    <p id="intro_para">
+                        I'm a Sophomore at <a href="http://bvucoepune.edu.in/" style="color: black;text-decoration: none;"
+                            id="college_link">Bharati Vidyapeeth College Of Engineering, Pune</a> doing Bachelor's in
+                        Information Technology.
+                    </p>
+                    <br>
+                    <p id="intro_para2">
+                        I am a Full-Stack Developer who has made a stack of projects and contributes to open source
+                        on <a href="https://github.com/" style="color: black;text-decoration: none;" id="github_link">Github.</a>
+
+                        <br>
+
+                        I have ardent interest in <span style="color:black">AWS</span> , <span style="color:black">cloud
+                            data security</span> and its
+                        <span style="color:black;">protection</span>.
+
+                        <br>
+                        As a hobby, I have interest in making small <span style="color:black;">animations</span> using
+                        scripts and have made many.
+                    </p>
+                    <br><br>
+                    <hr style="border-bottom:1px solid black; width: 300px;" class="text-center">
+                </div>
+            </div>
+            <br><br>
+            <br><br>
+        </div>
+    </div>
+
+    <div class="container-fluid" id="bg2">
+        <div class="row">
+            <div class="col-md-2 col-md-offset-5 col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4">
+                <div class="row" style="margin-top: 70px;">
+                    <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
+                        <div id="morphing"> <svg width="140" height="140" viewBox="0 0 140 140">
+                                <g fill="none" fill-rule="evenodd">
+                                    <g fill="currentColor" fill-opacity=".45" transform="translate(0 6)">
+                                        <polygon points="70 0 136.574 48.369 111.145 126.631 28.855 126.631 3.426 48.369"></polygon>
+                                        <polygon points="70 18 119.455 53.931 100.565 112.069 39.435 112.069 20.545 53.931"></polygon>
+                                        <polygon points="70 34.86 101.727 57.911 89.609 95.209 50.391 95.209 38.273 57.911"></polygon>
+                                        <polygon points="70 50.898 84.864 61.697 79.186 79.171 60.814 79.171 55.136 61.697"></polygon>
+                                    </g>
+                                    <polygon class="polymorph" stroke-width="1" stroke="whitesmoke" points="70 28.2500321689719 119.32399810770754 60.11899810770753 102.89502081521711 121.38102838438697 53.35501892292464 97.3809678310281 7.676032168971898 55.869011353754786 "></polygon>
+                                </g>
+                            </svg> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 70px;" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
+            <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+                <h1 style="font-family: 'Lora', serif;color: whitesmoke;">What I do?</h1>
+                <br><br>
+                <h2 style="margin-top: 70px;font-family: 'Lora', serif;color: whitesmoke;">WEB DEVELOPMENT</h2>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 2%;" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1000">
+            <div class="col-md-4 col-md-offset-4 col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 text-center">
+                <p style="font-family: 'Ubuntu', sans-serif;color: silver;margin-top: 5%; font-size: 18px;">Programming
+                    Languages: Java, C, C++, Python.</p>
+                <p style="font-family: 'Ubuntu', sans-serif;color: silver;margin-top: 5%;font-size: 18px;">Scripting
+                    Languages: JavaScript, ECMAScript, AngularJs, PHP, NodeJs, ExpressJs.</p>
+                <p style="font-family: 'Ubuntu', sans-serif;color: silver;margin-top: 5%;font-size: 18px;">Database:
+                    SQL, MongoDB.</p>
+                <p style="font-family: 'Ubuntu', sans-serif;color: silver;margin-top: 5%;font-size: 18px;">Web: HTML5,
+                    CSS3, Bootstrap, JavaScript and its libraries, Git.</p>
+
+                <br><br>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row" style="margin-top: 70px;">
+                    <div class="col-md-10 col-md-offset-1">
+                        <h1 style="color: black;opacity: 0.8;">Skills</h1>
+                    </div>
+                </div>
+                <br><br>
+                <hr width="80%;">
+                <!--
+                <div class="row" style="margin-top: 100px;">
+                    <div class="col-md-6 col-xs-6 col-sm-6">
+                        <h5 style="font-family: 'Ubuntu', sans-serif;color: black;font-size: 2em;left:30%;opacity: 0.7;margin-left:10%;">Ticket World</h5>
+                        <ul style="margin-top: 5%; margin-left: 10%;font-family: 'Ubuntu', sans-serif;color: black;font-size: 1.1em;">
+                            <li>A project that lets one buy tickets for a particular event based on categories specified.</li>
+                            <li>Implemented using EventBrite API.</li>
+                        </ul>
+
+                        <hr style="width: 90%;">
+                        <h5 style="font-family: 'Ubuntu', sans-serif;color: black;font-size: 2em;left:30%;opacity: 0.7;margin-left:10%;">Mailing Script</h5>
+                        <ul style="margin-top: 5%; margin-left: 10%;font-family: 'Ubuntu', sans-serif;color: black;font-size: 1.1em;">
+                            <li>This is a script written to send e-mail to multiple contacts stored in a file.</li>
+                            <li>Implemented using smtplib in python.</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4 col-md-offset-1 col-xs-6 col-sm-4 col-sm-offset-1" style="background-color: black;opacity: 0.7;border-radius: 10px;">
+                        <h5 style="opacity: 1.0;font-family: Calligraffitti;font-size: 2em;color: white;font-weight: 100;margin-top: 7%; margin-left: 3%;">Skills Used</h5>
+
+                        <ul style="opacity: 1.0;font-family: 'Ubuntu', sans-serif;list-style-type: none;font-size: 1.2em; color: white;opacity: 1.0;">
+                            <li style="color:black;"><a href="#" data-toggle="popover" title="Used in:" data-content="Ticket-World" data-placement="left" style="opacity: 1.0; color: whitesmoke;" id="pop_link1" data-trigger="hover">HTML</a></li>
+                            <li style="color:black;"><a href="#" title="Used in:" data-toggle="popover" data-placement="left" data-content="Ticket-World" style="color: whitesmoke;" id="pop_link2" data-trigger="hover">CSS3</a></li>
+                            <li style="color:black;"><a href="#" title="Used in:" data-toggle="popover" data-placement="left" data-content="Ticket-World" style="color: whitesmoke;" id="pop_link3" data-trigger="hover">JavaScript</a></li>
+                            <li style="color:black;"><a href="#" title="Used in:" data-toggle="popover" data-placement="left" data-content="Ticket-World" style="color: whitesmoke;" id="pop_link4" data-trigger="hover">Jquery</a></li>
+                            <li style="color:black;"><a href="#" title="Used in:" data-toggle="popover" data-placement="left" data-content="Ticket-World" style="color: whitesmoke;" id="pop_link5" data-trigger="hover">AOS</a></li>
+                            <li style="color:black;"><a href="#" title="Used in:" data-toggle="popover" data-placement="left" data-content="Ticket-World" style="color: whitesmoke;" id="pop_link6" data-trigger="hover">Bootstrap</a></li>
+                            <li style="color:black;"><a href="#" title="Used in:" data-toggle="popover" data-placement="left" data-content="Mailing Script" style="color: whitesmoke;" id="pop_link7" data-trigger="hover">Python</a></li>
+                        </ul>
+                        <br>
+                        <hr width="80%;">
+
+                        <div id="penner">
+                            <div class="small s1" style="transform: translateX(0px);"></div>
+                            <div class="small s2" style="transform: translateX(0px);"></div>
+                            <div class="small s3" style="transform: translateX(0px);"></div>
+                            <div class="small s4" style="transform: translateX(0px);"></div>
+                            <div class="small s5" style="transform: translateX(0px);"></div>
+                            <div class="small s6" style="transform: translateX(0px);"></div>
+                            <div class="small s7" style="transform: translateX(0px);"></div>
+                            <div class="small s8" style="transform: translateX(0px);"></div>
+                            <div class="small s9" style="transform: translateX(0px);"></div>
+                            <div class="small s10" style="transform: translateX(0px);"></div>
+                            <div class="small s11" style="transform: translateX(0px);"></div>
+                            <div class="small s12" style="transform: translateX(0px);"></div>
+                            <div class="small s13" style="transform: translateX(0px);"></div>
+                            <div class="small s14" style="transform: translateX(0px);"></div>
+                            <div class="small s15" style="transform: translateX(0px);"></div>
+                        </div>
+                    </div>
+                </div>
+-->
+                <div class="row" style="margin-top: 100px;">
+                    <div class="col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-4 col-xs-offset-1" style="margin-left: 10%;">
+                        <div class="col-4 princing-item blue" data-aos="fade-down-right" data-aos-duration="1000"
+                            data-aos-delay="600" id="box_1">
+                            <div class="pricing-divider ">
+                                <h3 class="text-light" style="text-align: center;">Programming Languages</h3>
+                                <br><br>
+                                <svg class='pricing-divider-img' enable-background='new 0 0 300 100' height='100px' id='Layer_1'
+                                    preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px'
+                                    xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'
+                                    y='0px'>
+                                    <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+	c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z'
+                                        fill='#FFFFFF' opacity='0.6'></path>
+                                    <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+	c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z'
+                                        fill='#FFFFFF' opacity='0.6'></path>
+                                    <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+	H42.401L43.415,98.342z'
+                                        fill='#FFFFFF' opacity='0.7'></path>
+                                    <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+	c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z'
+                                        fill='#FFFFFF'></path>
+                                </svg>
+                            </div>
+
+                            <div class="card-body bg-white mt-0 shadow">
+                                <div class="progress blue" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
+                                    <span class="progress-left">
+                                        <span class="progress-bar"></span>
+                                    </span>
+                                    <span class="progress-right">
+                                        <span class="progress-bar"></span>
+                                    </span>
+                                    <div class="progress-value">75%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-4 col-xs-offset-1" style="margin-left: 10%;">
+                        <div class="princing-item red" data-aos="fade-down-left" data-aos-duration="1000"
+                            data-aos-delay="800" id="box_2">
+                            <div class="pricing-divider ">
+                                <h3 class="text-light" style="text-align: center;">Scripting Languages</h3>
+                                <br>
+                                <svg class='pricing-divider-img' enable-background='new 0 0 300 100' height='100px' id='Layer_1'
+                                    preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px'
+                                    xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'
+                                    y='0px'>
+                                    <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+	c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z'
+                                        fill='#FFFFFF' opacity='0.6'></path>
+                                    <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+	c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z'
+                                        fill='#FFFFFF' opacity='0.6'></path>
+                                    <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+	H42.401L43.415,98.342z'
+                                        fill='#FFFFFF' opacity='0.7'></path>
+                                    <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+	c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z'
+                                        fill='#FFFFFF'></path>
+                                </svg>
+                            </div>
+                            <div class="card-body bg-white mt-0 shadow">
+                                <div class="progress pink" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
+                                    <span class="progress-left">
+                                        <span class="progress-bar"></span>
+                                    </span>
+                                    <span class="progress-right">
+                                        <span class="progress-bar"></span>
+                                    </span>
+                                    <div class="progress-value">90%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="width: 80%;">
+
+                <div class="row" style="margin-top: 100px;">
+                    <div class="col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-4 col-xs-offset-1" style="margin-left: 10%;">
+                        <div class="princing-item green" data-aos="fade-up-right" data-aos-duration="1000"
+                            data-aos-delay="1000" id="box_3">
+                            <div class="pricing-divider ">
+                                <h3 class="text-light" style="text-align: center;">Database</h3>
+                                <svg class='pricing-divider-img' enable-background='new 0 0 300 100' height='100px' id='Layer_1'
+                                    preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px'
+                                    xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'
+                                    y='0px'>
+                                    <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+	c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z'
+                                        fill='#FFFFFF' opacity='0.6'></path>
+                                    <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+	c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z'
+                                        fill='#FFFFFF' opacity='0.6'></path>
+                                    <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+	H42.401L43.415,98.342z'
+                                        fill='#FFFFFF' opacity='0.7'></path>
+                                    <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+	c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z'
+                                        fill='#FFFFFF'></path>
+                                </svg>
+                            </div>
+
+                            <div class="card-body bg-white mt-0 shadow">
+                                <div class="progress green" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
+                                    <span class="progress-left">
+                                        <span class="progress-bar"></span>
+                                    </span>
+                                    <span class="progress-right">
+                                        <span class="progress-bar"></span>
+                                    </span>
+                                    <div class="progress-value">80%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-4 col-xs-offset-1" style="margin-left: 10%;">
+                        <div class="princing-item yellow" data-aos="fade-up-left" data-aos-duration="1000"
+                            data-aos-delay="1400" id="box_4">
+                            <div class="pricing-divider ">
+                                <h3 class="text-light" style="text-align: center;">Web</h3>
+                                <svg class='pricing-divider-img' enable-background='new 0 0 300 100' height='100px' id='Layer_1'
+                                    preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px'
+                                    xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg'
+                                    y='0px'>
+                                    <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+	c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z'
+                                        fill='#FFFFFF' opacity='0.6'></path>
+                                    <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+	c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z'
+                                        fill='#FFFFFF' opacity='0.6'></path>
+                                    <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+	H42.401L43.415,98.342z'
+                                        fill='#FFFFFF' opacity='0.7'></path>
+                                    <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+	c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z'
+                                        fill='#FFFFFF'></path>
+                                </svg>
+                            </div>
+
+                            <div class="card-body bg-white mt-0 shadow">
+                                <div class="progress yellow" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
+                                    <span class="progress-left">
+                                        <span class="progress-bar"></span>
+                                    </span>
+                                    <span class="progress-right">
+                                        <span class="progress-bar"></span>
+                                    </span>
+                                    <div class="progress-value">80%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br><br><br>
+                <hr style="width: 80%;">
+            </div>
+        </div>
+    </div>
+
+    <section class="section-intro parallax-color-bar-block" id="sec4">
+
+
+        <div class="normal-background back-img" style="background-image: url('./imgs/pexels-photo-356056.jpeg')"></div>
+
+        <ul class="color-bars-list">
+
+            <li class="color-bar" data-parallax-color-bar='{"left": 10, "top": 40, "width": 10, "height": 50, "shift": 400, "duration": 4}'>
+
+                <div class="color-bar-background back-img" style="background-image: url('./imgs/pexels-photo-356056.jpeg')"></div>
+
+            </li>
+
+            <li class="color-bar" data-parallax-color-bar='{"left": 66, "top": 4, "width": 10, "height": 30, "shift": 400, "duration": 6}'>
+
+                <div class="color-bar-background back-img" style="background-image: url('./imgs/pexels-photo-356056.jpeg')"></div>
+
+            </li>
+
+            <li class="color-bar" data-parallax-color-bar='{"left": 27, "top": 10, "width": 15, "height": 60, "shift": 600, "duration": 3}'>
+
+                <div class="color-bar-background back-img" style="background-image: url('./imgs/pexels-photo-356056.jpeg')"></div>
+
+            </li>
+
+            <li class="color-bar" data-parallax-color-bar='{"left": 50, "top": 40, "width": 15, "height": 60, "shift": 600, "duration": 4}'>
+
+                <div class="color-bar-background back-img" style="background-image: url('./imgs/pexels-photo-356056.jpeg')"></div>
+
+            </li>
+
+            <li class="color-bar" data-parallax-color-bar='{"left": 80, "top": 34, "width": 10, "height": 40, "shift": 700, "duration": 7}'>
+
+                <div class="color-bar-background back-img" style="background-image: url('./imgs/pexels-photo-356056.jpeg')"></div>
+
+            </li>
+
+        </ul>
+
+        <div class="container">
+            <div class="content-wrap">
+                <h3 class="title" style="text-align: center;">
+                    My Projects
+                </h3>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section-features">
+
+        <div class="container">
+
+            <ul class="features-list">
+
+
+                <li class="feature-item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="800">
+                    <div class="content-col">
+                        <div class="title">
+                            <a href="https://github.com/Suyash2810/Content-Management-System" style="color:white;text-decoration:none;">Content
+                                Management System</a>
+                        </div>
+                        <div class="desc" style="font-family: 'Roboto', sans-serif;
+                          font-size: 18px;">
+                            <p>
+                                A system which is used to manage Web Content by various admins. The admins have
+                                authorized access to the data which visible to the public as well as the data hidden
+                                from the them. The content is being stored in MySQL database using PHP and being
+                                displayed in a presentation layer as per the requests to the public as well as the
+                                admins.
+                            </p>
+                            <p>
+                                The admin information has been encrypted using Blowfish algorithm using salting to add
+                                an extra layer of security thus preventing unauthorized access into the system.
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="img-col">
+                        <div class="img-wrap parallax-color-bar-block">
+
+                            <div class="normal-background back-img" style="background-image: url('./imgs/pexels-photo-938963.jpeg')"></div>
+
+                            <ul class="color-bars-list">
+
+                                <li class="color-bar" data-parallax-color-bar='{"left": 15, "top": 10, "width": 10, "height": 30, "shift": 400, "duration": 4}'>
+
+                                    <div class="color-bar-background back-img" style="background-image: url('./imgs/pexels-photo-938963.jpeg')"></div>
+
+                                </li>
+
+                                <li class="color-bar" data-parallax-color-bar='{"left": 30, "top": -20, "width": 20, "height": 50, "shift": 600, "duration": 3}'>
+
+                                    <div class="color-bar-background back-img" style="background-image: url('./imgs/pexels-photo-938963.jpeg')"></div>
+
+                                </li>
+
+                                <li class="color-bar" data-parallax-color-bar='{"left": 55, "top": 10, "width": 20, "height": 50, "shift": 300, "duration": 5}'>
+
+                                    <div class="color-bar-background back-img" style="background-image: url('./imgs/pexels-photo-938963.jpeg')"></div>
+
+                                </li>
+
+                                <li class="color-bar" data-parallax-color-bar='{"left": 90, "top": 10, "width": 10, "height": 30, "shift": 400, "duration": 6}'>
+
+                                    <div class="color-bar-background back-img" style="background-image: url('./imgs/pexels-photo-938963.jpeg')"></div>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </li>
+
+                <li class="feature-item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1200">
+                    <div class="content-col">
+                        <div class="title">
+                            <a href="https://github.com/Suyash2810/Ticket-World" style="color:white;text-decoration:none;">Ticket
+                                World</a>
+                        </div>
+                        <div class="desc" style="font-family: 'Roboto', sans-serif;
+                          font-size: 18px;">
+                            <p>
+                                Often one wants to look for events happening across the world online. Searching for
+                                them at random
+                                turns out to be a tedious process. Therefore this project lets you search for events
+                                based on a category specified and lists out all the events taking place.
+
+                            </p>
+                            <p>
+                                One can therefore buy tickets from the results that'll direct to their website.
+                                Implemented using EventBrite API.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="img-col">
+                        <div class="img-wrap parallax-color-bar-block">
+
+                            <div class="normal-background back-img" style="background-image: url('./imgs/man-hands-holidays-looking.jpg')"></div>
+
+                            <ul class="color-bars-list">
+
+                                <li class="color-bar" data-parallax-color-bar='{"left": 10, "top": 10, "width": 10, "height": 30, "shift": 200, "duration": 2}'>
+
+                                    <div class="color-bar-background back-img" style="background-image: url('./imgs/man-hands-holidays-looking.jpg')"></div>
+
+                                </li>
+
+                                <li class="color-bar" data-parallax-color-bar='{"left": 30, "top": 10, "width": 20, "height": 50, "shift": 400, "duration": 8}'>
+
+                                    <div class="color-bar-background back-img" style="background-image: url('./imgs/man-hands-holidays-looking.jpg')"></div>
+
+                                </li>
+
+                                <li class="color-bar" data-parallax-color-bar='{"left": 80, "top": 33, "width": 15, "height": 30, "shift": 100, "duration": 6}'>
+
+                                    <div class="color-bar-background back-img" style="background-image: url('./imgs/man-hands-holidays-looking.jpg')"></div>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </li>
+
+                <li class="feature-item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="1600">
+                    <div class="content-col">
+                        <div class="title">
+                            <a href="https://github.com/Suyash2810/Mail" style="color: white;text-decoration: none;">Mailing
+                                Script</a>
+                        </div>
+                        <div class="desc" style="font-family: 'Roboto', sans-serif;
+                          font-size: 18px;">
+                            <p>
+                                Sending mail to few people does not take that much time. However when the number of
+                                contacts are
+                                large it might turn out to be tedious.
+                            </p>
+                            <p>
+                                Therefore this is a project which sends mails to multiple contacts in seconds of time.
+                            </p>
+
+                            <p>
+                                I implemented this using smtplib module in python. The smtplib module defines an SMTP
+                                client session object that can be used to send
+                                mail to any Internet machine with an SMTP or ESMTP listener daemon.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="img-col">
+                        <div class="img-wrap parallax-color-bar-block">
+
+                            <div class="normal-background back-img" style="background-image: url('./imgs/pexels-photo-1061588.jpeg')"></div>
+
+                            <ul class="color-bars-list">
+
+                                <li class="color-bar" data-parallax-color-bar='{"left": 15, "top": 10, "width": 10, "height": 30, "shift": 400, "duration": 4}'>
+
+                                    <div class="color-bar-background back-img" style="background-image: url('./imgs/pexels-photo-1061588.jpeg')"></div>
+
+                                </li>
+
+                                <li class="color-bar" data-parallax-color-bar='{"left": 30, "top": -20, "width": 20, "height": 50, "shift": 600, "duration": 3}'>
+
+                                    <div class="color-bar-background back-img" style="background-image: url('./imgs/pexels-photo-1061588.jpeg')"></div>
+
+                                </li>
+
+                                <li class="color-bar" data-parallax-color-bar='{"left": 55, "top": 10, "width": 20, "height": 50, "shift": 300, "duration": 5}'>
+
+                                    <div class="color-bar-background back-img" style="background-image: url('./imgs/pexels-photo-1061588.jpeg')"></div>
+
+                                </li>
+
+                                <li class="color-bar" data-parallax-color-bar='{"left": 90, "top": 10, "width": 10, "height": 30, "shift": 400, "duration": 6}'>
+
+                                    <div class="color-bar-background back-img" style="background-image: url('./imgs/pexels-photo-1061588.jpeg')"></div>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </li>
+
+                <li class="feature-item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="2000">
+                    <div class="content-col">
+                        <div class="title">
+                            <a href="https://github.com/Suyash2810/BudgetApp" style="color: white;text-decoration:none;">Budget
+                                App</a>
+                        </div>
+                        <div class="desc" style="font-family: 'Roboto', sans-serif;
+                          font-size: 18px;">
+                            <p>
+                                This is one of my earliest projects. The app keeps a record of your monthly budget and
+                                the
+                                expenditure for different things bought. It therefore provides information about the
+                                money left
+                                and alerts when no money is left to spend.
+                            </p>
+                            <p>
+                                This is implemented using pure Javascript. The data is stored using the javascript's
+                                localstorage
+                                facility.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="img-col">
+                        <div class="img-wrap parallax-color-bar-block">
+
+                            <div class="normal-background back-img" style="background-image: url('./imgs/pexels-photo-1288483.jpeg')"></div>
+
+                            <ul class="color-bars-list">
+
+
+                                <li class="color-bar" data-parallax-color-bar='{"left": 20, "top": 30, "width": 20, "height": 50, "shift": 300, "duration": 3}'>
+
+                                    <div class="color-bar-background back-img" style="background-image: url('./imgs/pexels-photo-1288483.jpeg')"></div>
+
+                                </li>
+
+                                <li class="color-bar" data-parallax-color-bar='{"left": 50, "top": 20, "width": 10, "height": 30, "shift": 100, "duration": 4}'>
+
+                                    <div class="color-bar-background back-img" style="background-image: url('./imgs/pexels-photo-1288483.jpeg')"></div>
+
+                                </li>
+
+                                <li class="color-bar" data-parallax-color-bar='{"left": 70, "top": 20, "width": 15, "height": 60, "shift": 300, "duration": 2}'>
+
+                                    <div class="color-bar-background back-img" style="background-image: url('./imgs/pexels-photo-1288483.jpeg')"></div>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </li>
+
+                <li class="feature-item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="2400">
+                    <div class="content-col">
+                        <div class="title">
+                            <a href="https://github.com/Suyash2810/Loco-Weather" style="color: white;text-decoration: none;">Loco-Weather</a>
+                        </div>
+                        <div class="desc" style="font-family: 'Roboto', sans-serif;
+                          font-size: 18px;">
+                            <p>
+                                A console driven script which is used to fetch the geographical location of a place.
+                                The location can be obtained by entering the place name or the postal code.
+                            </p>
+                            <p>
+                                Further the
+                                script uses the latitude and logitude to fetch the current weather information about
+                                the place. The project is created in NodeJs by the implmentation of two APIs:
+                                LocationIQ and OpenWeatherMap API.
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="img-col">
+                        <div class="img-wrap parallax-color-bar-block">
+
+                            <div class="normal-background back-img" style="background-image: url('./imgs/cold-front-warm-front-hurricane-felix-76969.jpeg')"></div>
+
+                            <ul class="color-bars-list">
+
+                                <li class="color-bar" data-parallax-color-bar='{"left": 15, "top": 10, "width": 10, "height": 30, "shift": 400, "duration": 4}'>
+
+                                    <div class="color-bar-background back-img" style="background-image: url('./imgs/cold-front-warm-front-hurricane-felix-76969.jpeg')"></div>
+
+                                </li>
+
+                                <li class="color-bar" data-parallax-color-bar='{"left": 30, "top": -20, "width": 20, "height": 50, "shift": 600, "duration": 3}'>
+
+                                    <div class="color-bar-background back-img" style="background-image: url('./imgs/cold-front-warm-front-hurricane-felix-76969.jpeg')"></div>
+
+                                </li>
+
+                                <li class="color-bar" data-parallax-color-bar='{"left": 55, "top": 10, "width": 20, "height": 50, "shift": 300, "duration": 5}'>
+
+                                    <div class="color-bar-background back-img" style="background-image: url('./imgs/cold-front-warm-front-hurricane-felix-76969.jpeg')"></div>
+
+                                </li>
+
+                                <li class="color-bar" data-parallax-color-bar='{"left": 90, "top": 10, "width": 10, "height": 30, "shift": 400, "duration": 6}'>
+
+                                    <div class="color-bar-background back-img" style="background-image: url('./imgs/cold-front-warm-front-hurricane-felix-76969.jpeg')"></div>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </li>
+
+
+                <li class="feature-item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="2800">
+                    <div class="content-col">
+                        <div class="title">
+                            <a href="https://github.com/Suyash2810/Get-Recipe" style="color:white;text-decoration: none;">Get-Recipe</a>
+                        </div>
+                        <div class="desc" style="font-family: 'Roboto', sans-serif;
+                          font-size: 18px;">
+                            <p>
+                                A project which uses an API to get the recipe of any drink by it's name, ingredient,
+                                category, etc. The selected drinks can be added to the storage. Google Chrome's local
+                                storage is being used for storing the selected drinks.
+                            </p>
+                            <p>
+                                Implemented Google Custom Search
+                                API to search for further information about the drink.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="img-col">
+                        <div class="img-wrap parallax-color-bar-block">
+
+                            <div class="normal-background back-img" style="background-image: url('./imgs/pexels-photo-833109.jpeg')"></div>
+
+                            <ul class="color-bars-list">
+
+
+                                <li class="color-bar" data-parallax-color-bar='{"left": 20, "top": 30, "width": 20, "height": 50, "shift": 300, "duration": 3}'>
+
+                                    <div class="color-bar-background back-img" style="background-image: url('./imgs/pexels-photo-833109.jpeg')"></div>
+
+                                </li>
+
+                                <li class="color-bar" data-parallax-color-bar='{"left": 50, "top": 20, "width": 10, "height": 30, "shift": 100, "duration": 4}'>
+
+                                    <div class="color-bar-background back-img" style="background-image: url('./imgs/pexels-photo-833109.jpeg')"></div>
+
+                                </li>
+
+                                <li class="color-bar" data-parallax-color-bar='{"left": 70, "top": 20, "width": 15, "height": 60, "shift": 300, "duration": 2}'>
+
+                                    <div class="color-bar-background back-img" style="background-image: url('./imgs/pexels-photo-833109.jpeg')"></div>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+    </section>
+    <hr style="width: 80%;">
+    <section class="spacer"></section>
+
+
+    <div class="container-fluid" id="res_sec">
+        <div class="row" style="margin-top: 80px;">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <h1 style="font-family: 'Lora', serif;color: whitesmoke;font-size: 2.0em;">Position of
+                            Responsibility</h1>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 80px;">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="well" style="background-color: transparent;">
+                            <h6 style="font-family: 'Lora', serif;color: whitesmoke;font-size: 2.2em;opacity: 1.0;margin-top: 30px;text-align: center;">Associate</h6>
+                            <p style="margin-top: 20px; text-align: center;opacity: 1.0; color: white;font-family: 'Montserrat', sans-serif;font-size: 1.3em">I
+                                have worked as an Technical Associate in Entrepreneurship and Development Cell of our
+                                College. I had worked in organizing various events such as Robotics 2018 in
+                                Collaboration with IIT Delhi and managed the technical competetion Code Relay of
+                                StartUp Conclave 2.0 - 2018 - CodeChef being our platform partner.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr style="width: 10%;">
+
+        <div class="row" style="margin-top: 80px;">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <h1 style="font-family: 'Lora', serif;color: whitesmoke;font-size: 2em;">Google Developer Group
+                            DevFest-2018</h1>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 80px;">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="well" style="background-color: transparent;">
+                            <h6 style="font-family: 'Lora', serif;color: whitesmoke;font-size: 2.2em;opacity: 1.0;margin-top: 30px;text-align: center;">Volunteer</h6>
+                            <p style="margin-top: 20px; text-align: center;opacity: 1.0; color: white;font-family: 'Montserrat', sans-serif; font-size: 1.3em;">I
+                                was responsible for the technical support in Google Developer Group DevFest 2018.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr style="width: 10%;">
+        <br>
+    </div>
+
+    <div class="container-fluid" id="footer" style="padding: 0;margin: 0;border: 0;">
+        <div class="well" style="margin-bottom: 0;">
+            <div class="row" style="margin-top: 80px;">
+                <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+                    <h6 style="font-family: 'Lora', serif;color: gray;font-size: 2.0em;opacity: 1.0;margin-top: 10px;text-align: center;">Want
+                        to reach?</h6>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 5%;">
+                <div class="col-md-4 col-md-offset-4 col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2">
+                    <ul class="list-inline">
+                        <div class="row" style="margin-left: 8%;">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <li><a href="https://www.linkedin.com/in/suyash-awasthi-5a0b72156"><i class="fa fa-linkedin
+                                fa-lg white-text mr-md-5 mr-3 fa-3x"
+                                            style="color: lightgray;" id="linkedin"></i></a></li>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <li><a href="https://github.com/Suyash2810"><i class="fa fa-github fa-lg white-text mr-md-5
+                                mr-3 fa-3x"
+                                            style="color: lightgray;" id="github"></i></a></li>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <li><a href="https://www.facebook.com/suyash.awasthi2"><i class="fa fa-facebook fa-lg
+                                white-text mr-md-5 mr-3 fa-3x"
+                                            style="color: lightgray;" id="facebook"></i></a></li>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <li><a href="#"><i class="fa fa-twitter fa-lg white-text mr-md-5 mr-3 fa-3x" style="color: lightgray;"
+                                            id="twitter"></i></a></li>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 5%;">
+                <div class="col-md-6 col-md-offset-3">
+                    <p style="margin-top: 20px; text-align: center;opacity: 1.0; color: lightgray;font-family: 'Lora', serif;">
+                        Suyash Awasthi 2019 &nbsp; <i class="fa fa-heart-o" style="color: black;"></i>
+                        <br>
+                        Thank you for visiting. I hope you have a good day. <i class="fa fa-smile-o" style="color: black;"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/TweenLite.min.js"></script>
+    <script src="js/CSSPlugin.min.js"></script>
+
+    <script src="js/parallaxColorBars.js"></script>
+
+
+    <script>
+        $('.parallax-color-bar-block').parallaxColorBars();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+    <script src="script/load.js"></script>
+    <script src="script/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true
+        });
+    </script>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+</body>
+
+</html>

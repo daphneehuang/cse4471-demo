@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ritiek Malhotra – All my wisdom dumped in one place</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="All my wisdom dumped in one place">
+    <meta property="og:description" content="All my wisdom dumped in one place" />
+    
+    <meta name="author" content="Ritiek Malhotra" />
+
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Ritiek Malhotra - All my wisdom dumped in one place" href="/feed.xml" />
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/" class="site-avatar"><img src="https://github.com/ritiek.png" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Ritiek Malhotra</a></h1>
+            <p class="site-description">All my wisdom dumped in one place</p>
+          </div>
+
+          <nav>
+            <a href="/">Blog</a>
+            <a href="/about">About</a>
+            <a href="/donate">Donate</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <div class="posts">
+  
+    <article class="post">
+
+      <h1><a href="/posts/2019/06/blog-post-14/modifying-memory-of-a-running-process">Modifying memory of a running process in Linux</a></h1>
+
+      <div class="entry">
+        <p>Everything said in this post is based on my half-understanding of how memory works,
+especially in Linux. There are certainly going to be parts in this post that are misunderstood
+by me. Don’t rely on this post for your homework and take everything in this post with a
+grain of salt. However, I hope to continue to refine the content in this post as I understand
+more about how a computer works. Consider this as a disclaimer. That said, let’s begin!</p>
+
+
+      </div>
+
+      <a href="/posts/2019/06/blog-post-14/modifying-memory-of-a-running-process" class="read-more">Read More</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/posts/2019/05/blog-post-13/i-installed-linux-on-my-usb">I installed Linux on my USB flash drive!</a></h1>
+
+      <div class="entry">
+        <p>In my university, we mostly have only-Windows computers. What I mean by “only-windows computers” that the computers
+have Windows as the only operating system installed on them. Now, I always like to be accompanied by a terminal
+with everything I do (even writing this post in a TUI on Linux) and avoid proprietary software whenever possible.
+By the way, <a href="https://github.com/cmderdev/cmder">cmder</a> is a pretty good project that adds the missing flakes (like
+wget, curl, etc.) to the command-prompt but it doesn’t change the fact that Windows itself is still closed-source
+(atleast as of writing this). Me, being an avid supporter of open-source cannot back down here.</p>
+
+
+      </div>
+
+      <a href="/posts/2019/05/blog-post-13/i-installed-linux-on-my-usb" class="read-more">Read More</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/posts/2019/04/blog-post-12/synchronizing-multimedia-playback">Synchronizing multimedia playback on different machines</a></h1>
+
+      <div class="entry">
+        <p>Synchronizing clocks of different computers in the order of milliseconds can be pretty daunting. This is what is
+mostly stopping me from doing same stuff on two different machines at the same time without huge latency issues,
+stuff that could get pretty interesting.</p>
+
+
+      </div>
+
+      <a href="/posts/2019/04/blog-post-12/synchronizing-multimedia-playback" class="read-more">Read More</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/posts/2019/02/blog-post-11/sharing-midi-controllers">Sharing MIDI controllers between Linux machines</a></h1>
+
+      <div class="entry">
+        <p>In the <a href="https://ritiek.github.io/posts/2019/02/blog-post-10/">last post</a> - I talked about how one can
+share input event devices available as <code class="highlighter-rouge">/dev/input/event*</code>. Lately, I’ve been also wanting to share my
+MIDI keyboard (Yamaha P-45 Digital Piano) so that I can receive and send MIDI events to my Linux machine
+without using a cable.</p>
+
+
+      </div>
+
+      <a href="/posts/2019/02/blog-post-11/sharing-midi-controllers" class="read-more">Read More</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/posts/2019/02/blog-post-10/sharing-linux-event-devices">Sharing Linux event devices with other Linux machines</a></h1>
+
+      <div class="entry">
+        <p>In Linux machines, <code class="highlighter-rouge">/dev/input/event*</code> are special files known as devices files. These files act
+as a middle man between an application software and the kernel to interact with the hardware input
+devices connected to the system. To know what devices are connected to your system, run:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cat /proc/bus/input/devices
+...
+I: Bus=0011 Vendor=0002 Product=0007 Version=01b1
+N: Name="SynPS/2 Synaptics TouchPad"
+P: Phys=isa0060/serio1/input0
+S: Sysfs=/devices/platform/i8042/serio1/input/input5
+U: Uniq=
+H: Handlers=mouse0 event5
+B: PROP=1
+B: EV=b
+B: KEY=e520 xxxxx 0 0 0 0
+B: ABS=66080001100xxxx
+...
+</code></pre></div></div>
+
+
+      </div>
+
+      <a href="/posts/2019/02/blog-post-10/sharing-linux-event-devices" class="read-more">Read More</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/posts/2018/12/blog-post-9/avc-vs-hevc">H.264 (AVC) and H.265 (HEVC) performance on Kodi</a></h1>
+
+      <div class="entry">
+        <p>My christmas holidays have just begun and I’ve been trying to play some media files on Kodi.
+This blog post is mainly a result of frustruation where some media files just won’t play on two of my
+low-cost computing devices (Raspberry Pi 2 Model B and Amazon Fire TV Stick) and in hope that this blog post will be
+a good partner to me if someday I in the future decide to tinker further.</p>
+
+
+      </div>
+
+      <a href="/posts/2018/12/blog-post-9/avc-vs-hevc" class="read-more">Read More</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/posts/2018/12/blog-post-8/static-noise-from-raspberry-pi">Fixing the annoying static noise from my Raspberry Pi's 3.5mm jack</a></h1>
+
+      <div class="entry">
+        <p>With my now four-year old Pi 2, I’ve noticed a static spark-like noise coming out from the 3.5mm audio
+jack for as far as I can remember. This noise wasn’t the kind of usual constant white noise buzzing from
+the speakers. Instead, my connected speakers would make a crackle noise at regular intervals and then
+remain perfectly noise-less for the remaining period. This periodic noise only appeared when the speakers
+were connected to the Pi and didn’t happen with any other device.</p>
+
+
+      </div>
+
+      <a href="/posts/2018/12/blog-post-8/static-noise-from-raspberry-pi" class="read-more">Read More</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/posts/2018/07/blog-post-7/wohoo-we-have-done-it">Summer past and GSoC ends</a></h1>
+
+      <div class="entry">
+        <p>It’s that time of the year when students are supposed to submit their final
+evaluations. As Google expects students to put up their final reports somewhere
+in a stable location and as there is always a chance that I might mess up something
+on my blog, so I also made a
+<a href="https://gist.github.com/ritiek/505b696436182a4b3da027787c831edc">Gist wrap up of this blog post</a>
+of how we progressed in
+these few months and all the great stuff that happened in our community.</p>
+
+
+      </div>
+
+      <a href="/posts/2018/07/blog-post-7/wohoo-we-have-done-it" class="read-more">Read More</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/posts/2018/07/blog-post-6/back-to-school">It's almost time</a></h1>
+
+      <div class="entry">
+        <p>Oh, there we go! Time for GSoC’s pre-final blog post.</p>
+
+
+      </div>
+
+      <a href="/posts/2018/07/blog-post-6/back-to-school" class="read-more">Read More</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/posts/2018/07/blog-post-5/new-stuff">Adding support for JHTD in PlasmaPy</a></h1>
+
+      <div class="entry">
+        <p>During this period, nothing big happened except we’re able to get merge a new
+Plasma subclass supposed to work with OpenPMD Datasets
+<a href="https://github.com/PlasmaPy/PlasmaPy/pull/500">#500</a>! It still isn’t
+very efficient to work with larger datasets and should rather be considered a
+prototype at the moment. It currently supports reading only mesh data from an
+HDF5. It also reads the complete record into memory, which is certain to cause
+problems with big datasets. In the real world, heavy datasets can go into dozens
+of GBs. In the future, we’re going to have to provide a way to read stuff
+directly from disk or provide someother way instead writing all of it to memory.</p>
+
+
+      </div>
+
+      <a href="/posts/2018/07/blog-post-5/new-stuff" class="read-more">Read More</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/posts/2018/06/blog-post-4/reading-openpmd-standard-based-hdf5-files">Reading HDF5 files based on OpenPMD</a></h1>
+
+      <div class="entry">
+        <p>We’re currently working on developing a new Plasma subclass. It is supposed to read
+HDF5 files that are based on OpenPMD standard and we have a sort of prototype ready
+in <a href="https://github.com/PlasmaPy/PlasmaPy/pull/500">#500</a>. It should be ready to
+merge once we figure out how we are supposed to handle the example datasets for our
+tests. It probably isn’t a good idea to ship them with the main PlasmaPy codebase.
+I guess we’re going to settle downloading them on the fly when running our tests.</p>
+
+
+      </div>
+
+      <a href="/posts/2018/06/blog-post-4/reading-openpmd-standard-based-hdf5-files" class="read-more">Read More</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/posts/2018/06/blog-post-3/lurking-around">GG Phase-1</a></h1>
+
+      <div class="entry">
+        <p>As we all (probably) know now, our Plasma factory implementation got finished much
+sooner than expected. So, I’ve been mostly lurking around since my last blog post
+adding features in our plasma pie, discovering bugs under our plasma bed, reviewing
+plasma requests, gazing at stars made of plasma, etc.</p>
+
+
+      </div>
+
+      <a href="/posts/2018/06/blog-post-3/lurking-around" class="read-more">Read More</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/posts/2018/05/blog-post-2/structuring-the-plasma-factory">Structuring our Plasma factory</a></h1>
+
+      <div class="entry">
+        <p>We’re mostly done with structuring our Plasma factory. The PR
+(<a href="https://github.com/PlasmaPy/PlasmaPy/pull/459">#459</a>) just got merged yesterday! I’d have to say
+we weren’t expecting this to work out this quickly.</p>
+
+
+      </div>
+
+      <a href="/posts/2018/05/blog-post-2/structuring-the-plasma-factory" class="read-more">Read More</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/posts/2018/05/blog-post-1/how-i-got-into-gsoc">Community Bonding Period</a></h1>
+
+      <div class="entry">
+        <h2 id="how-i-got-here">How I Got Here</h2>
+
+
+      </div>
+
+      <a href="/posts/2018/05/blog-post-1/how-i-got-into-gsoc" class="read-more">Read More</a>
+    </article>
+  
+</div>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+<a href="mailto:ritiekmalhotra123@gmail.com"><i class="svg-icon email"></i></a>
+
+
+<a href="https://github.com/ritiek"><i class="svg-icon github"></i></a>
+<a href="https://reddit.com/u/ritiek"><i class="svg-icon reddit"></i></a>
+
+<a href="https://www.linkedin.com/in/ritiek"><i class="svg-icon linkedin"></i></a>
+
+<a href="/feed.xml"><i class="svg-icon rss"></i></a>
+
+<a href="http://stackoverflow.com/users/6554943/ritiek"><i class="svg-icon stackoverflow"></i></a>
+
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+  </body>
+</html>

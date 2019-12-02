@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charSet="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <style data-href="/component---src-pages-index-js.57c23e60f1502d2970b9.css">
+    body,
+    html {
+      height: 100%;
+      margin: 0
+    }
+
+    body {
+      background: #ffdab9;
+      color: #b8860b
+    }
+
+    a {
+      color: #191970
+    }
+
+    a:visited {
+      color: #483d8b
+    }
+
+    body {
+      font-family: Cousine, sans-serif;
+      font-size: 16px;
+      line-height: 1.5
+    }
+
+    h1.title {
+      font-size: 48px;
+      line-height: 48px;
+      margin: 48px 0
+    }
+
+    h1.title a {
+      text-decoration: none
+    }
+
+    #wrapper {
+      align-content: stretch;
+      align-items: stretch;
+      background: #ffdab9;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: flex-start;
+      padding: 0 48px
+    }
+
+    .social-media-links {
+      margin-bottom: 48px
+    }
+
+    .social-media-links a {
+      margin-right: 24px
+    }
+
+    .item-wrapper {
+      display: flex;
+      flex: 1 1;
+      flex-direction: row;
+      flex-wrap: wrap;
+      height: 100%;
+      max-width: 1200px
+    }
+
+    .item,
+    .item-outer {
+      display: flex;
+      flex-direction: column;
+      transition: .5s
+    }
+
+    .item {
+      margin-bottom: 24px;
+      margin-right: 24px;
+      position: relative
+    }
+
+    .item-client {
+      font-size: 36px;
+      line-height: 54px;
+      max-width: 100px;
+      transition: .5s;
+      width: 100%
+    }
+
+    .item-title {
+      font-style: italic;
+      margin: 0;
+      transition: .5s
+    }
+
+    .item-tagline,
+    .item-title {
+      font-size: 16px;
+      line-height: 24px;
+      max-width: 200px;
+      width: 100%
+    }
+
+    .item-tagline {
+      color: olive;
+      transition: 3s
+    }
+
+    .cube-blend-layer {
+      mix-blend-mode: difference;
+      pointer-events: none;
+      z-index: 20
+    }
+
+    .cube-wrapper {
+      -webkit-perspective: 600px;
+      perspective: 600px;
+      position: absolute
+    }
+
+    .cube {
+      -webkit-transform-style: preserve-3d;
+      -webkit-animation-duration: 60s;
+      animation-duration: 60s;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+      height: 200px;
+      position: relative;
+      transform-style: preserve-3d;
+      width: 200px
+    }
+
+    .cube-wrapper:first-of-type {
+      left: 120px;
+      top: 100px
+    }
+
+    .cube-wrapper:first-of-type .cube {
+      -webkit-animation-name: rotate0;
+      animation-name: rotate0
+    }
+
+    .cube-wrapper:nth-of-type(2) {
+      left: 420px;
+      top: 420px
+    }
+
+    .cube-wrapper:nth-of-type(2) .cube {
+      -webkit-animation-name: rotate1;
+      animation-name: rotate1
+    }
+
+    .cube-wrapper:nth-of-type(3) {
+      left: 110px;
+      top: 600px
+    }
+
+    .cube-wrapper:nth-of-type(3) .cube {
+      -webkit-animation-name: rotate2;
+      animation-name: rotate2
+    }
+
+    .cube__face {
+      background: #fff;
+      height: 200px;
+      position: absolute;
+      width: 200px
+    }
+
+    .cube__face--front {
+      -webkit-transform: rotateY(0deg) translateZ(100px);
+      transform: rotateY(0deg) translateZ(100px)
+    }
+
+    .cube__face--right {
+      -webkit-transform: rotateY(90deg) translateZ(100px);
+      transform: rotateY(90deg) translateZ(100px)
+    }
+
+    .cube__face--back {
+      -webkit-transform: rotateY(180deg) translateZ(100px);
+      transform: rotateY(180deg) translateZ(100px)
+    }
+
+    .cube__face--left {
+      -webkit-transform: rotateY(-90deg) translateZ(100px);
+      transform: rotateY(-90deg) translateZ(100px)
+    }
+
+    .cube__face--top {
+      -webkit-transform: rotateX(90deg) translateZ(100px);
+      transform: rotateX(90deg) translateZ(100px)
+    }
+
+    .cube__face--bottom {
+      -webkit-transform: rotateX(-90deg) translateZ(100px);
+      transform: rotateX(-90deg) translateZ(100px)
+    }
+
+    @-webkit-keyframes rotate0 {
+      0% {
+        -webkit-transform: rotateX(120deg) rotateY(60deg) scaleX(1);
+        transform: rotateX(120deg) rotateY(60deg) scaleX(1)
+      }
+
+      to {
+        -webkit-transform: rotateX(480deg) rotateY(420deg) scale3d(1.9, 1.9, 1.9);
+        transform: rotateX(480deg) rotateY(420deg) scale3d(1.9, 1.9, 1.9)
+      }
+    }
+
+    @keyframes rotate0 {
+      0% {
+        -webkit-transform: rotateX(120deg) rotateY(60deg) scaleX(1);
+        transform: rotateX(120deg) rotateY(60deg) scaleX(1)
+      }
+
+      to {
+        -webkit-transform: rotateX(480deg) rotateY(420deg) scale3d(1.9, 1.9, 1.9);
+        transform: rotateX(480deg) rotateY(420deg) scale3d(1.9, 1.9, 1.9)
+      }
+    }
+
+    @-webkit-keyframes rotate1 {
+      0% {
+        -webkit-transform: rotateX(40deg) rotateY(400deg) scale3d(.8, .8, .8);
+        transform: rotateX(40deg) rotateY(400deg) scale3d(.8, .8, .8)
+      }
+
+      to {
+        -webkit-transform: rotateX(410deg) rotateY(350deg) scale3d(.6, .6, .6);
+        transform: rotateX(410deg) rotateY(350deg) scale3d(.6, .6, .6)
+      }
+    }
+
+    @keyframes rotate1 {
+      0% {
+        -webkit-transform: rotateX(40deg) rotateY(400deg) scale3d(.8, .8, .8);
+        transform: rotateX(40deg) rotateY(400deg) scale3d(.8, .8, .8)
+      }
+
+      to {
+        -webkit-transform: rotateX(410deg) rotateY(350deg) scale3d(.6, .6, .6);
+        transform: rotateX(410deg) rotateY(350deg) scale3d(.6, .6, .6)
+      }
+    }
+
+    @-webkit-keyframes rotate2 {
+      0% {
+        -webkit-transform: rotateX(0deg) rotateY(1turn) scale3d(.6, .6, .6);
+        transform: rotateX(0deg) rotateY(1turn) scale3d(.6, .6, .6)
+      }
+
+      to {
+        -webkit-transform: rotateX(200deg) rotateY(-160deg) scale3d(.7, .7, .7);
+        transform: rotateX(200deg) rotateY(-160deg) scale3d(.7, .7, .7)
+      }
+    }
+
+    @keyframes rotate2 {
+      0% {
+        -webkit-transform: rotateX(0deg) rotateY(1turn) scale3d(.6, .6, .6);
+        transform: rotateX(0deg) rotateY(1turn) scale3d(.6, .6, .6)
+      }
+
+      to {
+        -webkit-transform: rotateX(200deg) rotateY(-160deg) scale3d(.7, .7, .7);
+        transform: rotateX(200deg) rotateY(-160deg) scale3d(.7, .7, .7)
+      }
+    }
+
+    /*# sourceMappingURL=component---src-pages-index-js.57c23e60f1502d2970b9.css.map*/
+  </style>
+  <title data-react-helmet="true">Lewis Flude</title>
+  <meta data-react-helmet="true" name="description"
+    content="Lewis Flude is a front-end developer, designer and startup founder based in London" />
+  <meta data-react-helmet="true" name="keywords"
+    content="developer, designer, startup, founder, london, techstars, blockchain, crypto, ethereum, bitcoin, systems, user, experience, javascript, ruby, css, html" />
+  <meta data-react-helmet="true" name="viewport" content="initial-scale=1, viewport-fit=cover" />
+  <link rel="shortcut icon" href="/icons/icon-48x48.png" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="theme-color" content="#663399" />
+  <link rel="preload" as="font" type="font/woff2" crossOrigin="anonymous"
+    href="/google-fonts/s/cousine/v12/d6lIkaiiRdih4SpP_SQvzA.woff2" />
+  <style type="text/css">
+    @font-face {
+      font-family: Cousine;
+      font-style: normal;
+      font-weight: 400;
+      src: local('Cousine Regular'), local('Cousine-Regular'), url(/google-fonts/s/cousine/v12/d6lIkaiiRdih4SpP_SQvzA.woff2) format('woff2'), url(/google-fonts/s/cousine/v12/d6lIkaiiRdih4SpP_SQvyg.woff) format('woff')
+    }
+  </style>
+  <link as="script" rel="preload" href="/component---src-pages-index-js-5cb392ae421651ef986d.js" />
+  <link as="script" rel="preload" href="/0-907e281ab45204aef3bb.js" />
+  <link as="script" rel="preload" href="/app-16815cb9dc9ae90185d6.js" />
+  <link as="script" rel="preload" href="/webpack-runtime-c965498c544cdbcf65dc.js" />
+  <link rel="preload" href="/static/d/173/path---index-6a9-NZuapzHg3X9TaN1iIixfv1W23E.json" as="fetch"
+    crossOrigin="use-credentials" />
+</head>
+
+<body>
+  <div id="___gatsby">
+    <div style="outline:none" tabindex="-1" role="group">
+      <div id="wrapper">
+        <div class="header">
+          <h1 class="title"><a aria-current="page" class="" href="/">Lewis Flude is a front-end developer, designer and
+              startup founder based in London</a></h1>
+          <div class="social-media-links"><a href="https://twitter.com/lewisflude">Twitter</a><a
+              href="https://facebook.com/lewisflude">Facebook</a><a href="https://github.com/lewisflude">GitHub</a>
+          </div>
+        </div>
+        <div class="cube-blend-layer">
+          <div class="cube-wrapper">
+            <div class="cube">
+              <div class="cube__face cube__face--front"></div>
+              <div class="cube__face cube__face--right"></div>
+              <div class="cube__face cube__face--back"></div>
+              <div class="cube__face cube__face--left"></div>
+              <div class="cube__face cube__face--top"></div>
+              <div class="cube__face cube__face--bottom"></div>
+            </div>
+          </div>
+          <div class="cube-wrapper">
+            <div class="cube">
+              <div class="cube__face cube__face--front"></div>
+              <div class="cube__face cube__face--right"></div>
+              <div class="cube__face cube__face--back"></div>
+              <div class="cube__face cube__face--left"></div>
+              <div class="cube__face cube__face--top"></div>
+              <div class="cube__face cube__face--bottom"></div>
+            </div>
+          </div>
+          <div class="cube-wrapper">
+            <div class="cube">
+              <div class="cube__face cube__face--front"></div>
+              <div class="cube__face cube__face--right"></div>
+              <div class="cube__face cube__face--back"></div>
+              <div class="cube__face cube__face--left"></div>
+              <div class="cube__face cube__face--top"></div>
+              <div class="cube__face cube__face--bottom"></div>
+            </div>
+          </div>
+        </div>
+        <div class="item-wrapper">
+          <div class="item-outer" style="flex-grow:1;flex-shrink:1">
+            <div class="item" style="left:1px;top:1px;flex-grow:1;flex-shrink:1"><a class="item-client"
+                href="https://unmade.com" style="transform:scaleY(1)">Unmade</a>
+              <p class="item-title" style="transform:scaleY(1)">Senior Front-end Engineer</p>
+              <p class="item-tagline">The global fashion software company that powers Fashion Driven by Demand
+              </p>
+            </div>
+          </div>
+          <div class="item-outer" style="flex-grow:1;flex-shrink:1">
+            <div class="item" style="left:1px;top:1px;flex-grow:1;flex-shrink:1"><a class="item-client"
+                href="https://pillarproject.io" style="transform:scaleY(1)">Pillar Project</a>
+              <p class="item-title" style="transform:scaleY(1)">Front-end Developer</p>
+              <p class="item-tagline">The world&#x27;s most friendly crypto wallet and personal data locker</p>
+            </div>
+          </div>
+          <div class="item-outer" style="flex-grow:1;flex-shrink:1">
+            <div class="item" style="left:1px;top:1px;flex-grow:1;flex-shrink:1"><a class="item-client"
+                href="https://cookieshq.co.uk" style="transform:scaleY(1)">Cookies</a>
+              <p class="item-title" style="transform:scaleY(1)">Front-end Developer &amp; Designer</p>
+              <p class="item-tagline">A fantastic Ruby-on-Rails agency</p>
+            </div>
+          </div>
+          <div class="item-outer" style="flex-grow:1;flex-shrink:1">
+            <div class="item" style="left:1px;top:1px;flex-grow:1;flex-shrink:1"><a class="item-client"
+                href="https://neos.co.uk" style="transform:scaleY(1)">Neos</a>
+              <p class="item-title" style="transform:scaleY(1)">Front-end Developer &amp; Designer</p>
+              <p class="item-tagline">Insurance meets internet-of-things</p>
+            </div>
+          </div>
+          <div class="item-outer" style="flex-grow:1;flex-shrink:1">
+            <div class="item" style="left:1px;top:1px;flex-grow:1;flex-shrink:1"><a class="item-client"
+                href="https://hiroes.co" style="transform:scaleY(1)">Hiroes</a>
+              <p class="item-title" style="transform:scaleY(1)">Full-stack Developer &amp; Designer</p>
+              <p class="item-tagline">The best way to find people to help run your next event</p>
+            </div>
+          </div>
+          <div class="item-outer" style="flex-grow:1;flex-shrink:1">
+            <div class="item" style="left:1px;top:1px;flex-grow:1;flex-shrink:1"><a class="item-client"
+                href="https://propoly.com" style="transform:scaleY(1)">Propoly</a>
+              <p class="item-title" style="transform:scaleY(1)">Front-end Developer</p>
+              <p class="item-tagline">A clean, easy to use lettings site</p>
+            </div>
+          </div>
+          <div class="item-outer" style="flex-grow:1;flex-shrink:1">
+            <div class="item" style="left:1px;top:1px;flex-grow:1;flex-shrink:1"><a class="item-client"
+                href="https://newfuturelondon.com" style="transform:scaleY(1)">New Future London</a>
+              <p class="item-title" style="transform:scaleY(1)">Front-end Developer &amp; Designer</p>
+              <p class="item-tagline">A streetware brand</p>
+            </div>
+          </div>
+          <div class="item-outer" style="flex-grow:1;flex-shrink:1">
+            <div class="item" style="left:1px;top:1px;flex-grow:1;flex-shrink:1"><a class="item-client"
+                href="https://www.leavetheboyalone.com/" style="transform:scaleY(1)">Boy London</a>
+              <p class="item-title" style="transform:scaleY(1)">Front-end Developer &amp; Designer</p>
+              <p class="item-tagline">An iconic fashion brand founded in the 70s in London</p>
+            </div>
+          </div>
+          <div class="item-outer" style="flex-grow:1;flex-shrink:1">
+            <div class="item" style="left:1px;top:1px;flex-grow:1;flex-shrink:1"><a class="item-client"
+                href="https://zzish.com" style="transform:scaleY(1)">Zzish</a>
+              <p class="item-title" style="transform:scaleY(1)">Front-end Developer</p>
+              <p class="item-tagline">A digital platform for teachers and their students</p>
+            </div>
+          </div>
+          <div class="item-outer" style="flex-grow:1;flex-shrink:1">
+            <div class="item" style="left:1px;top:1px;flex-grow:1;flex-shrink:1"><a class="item-client"
+                href="https://makeshift.io/" style="transform:scaleY(1)">Makeshift</a>
+              <p class="item-title" style="transform:scaleY(1)">Full-stack Developer &amp; Designer</p>
+              <p class="item-tagline">A one-of-a-kind product agency that tried wild new ideas</p>
+            </div>
+          </div>
+          <div class="item-outer" style="flex-grow:1;flex-shrink:1">
+            <div class="item" style="left:1px;top:1px;flex-grow:1;flex-shrink:1"><a class="item-client"
+                href="https://magnific.com/" style="transform:scaleY(1)">Magnific</a>
+              <p class="item-title" style="transform:scaleY(1)">Founder</p>
+              <p class="item-tagline">A content agency, a network of 700+ writers and 10+ magazines</p>
+            </div>
+          </div>
+          <div class="item-outer" style="flex-grow:1;flex-shrink:1">
+            <div class="item" style="left:1px;top:1px;flex-grow:1;flex-shrink:1"><a class="item-client"
+                href="https://enthuse.me" style="transform:scaleY(1)">Enthuse.me</a>
+              <p class="item-title" style="transform:scaleY(1)">Front-end Developer &amp; Designer</p>
+              <p class="item-tagline">The simplest way to show the world your expertise</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script
+    id="gatsby-script-loader">/*<![CDATA[*/window.page = { "componentChunkName": "component---src-pages-index-js", "jsonName": "index", "path": "/" }; window.dataPath = "173/path---index-6a9-NZuapzHg3X9TaN1iIixfv1W23E";/*]]>*/</script>
+  <script
+    id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping = { "app": ["/app-16815cb9dc9ae90185d6.js"], "component---node-modules-gatsby-plugin-offline-app-shell-js": ["/component---node-modules-gatsby-plugin-offline-app-shell-js-12ee6adcec918d6591ff.js"], "component---src-pages-404-js": ["/component---src-pages-404-js.82ec7a1cf42d836b5812.css", "/component---src-pages-404-js-06c537059f38ba9b7cd6.js"], "component---src-pages-index-js": ["/component---src-pages-index-js.57c23e60f1502d2970b9.css", "/component---src-pages-index-js-5cb392ae421651ef986d.js"], "component---src-pages-page-2-js": ["/component---src-pages-page-2-js.82ec7a1cf42d836b5812.css", "/component---src-pages-page-2-js-5a1669496c2df9acd1b8.js"] };/*]]>*/</script>
+  <script src="/webpack-runtime-c965498c544cdbcf65dc.js" async=""></script>
+  <script src="/app-16815cb9dc9ae90185d6.js" async=""></script>
+  <script src="/0-907e281ab45204aef3bb.js" async=""></script>
+  <script src="/component---src-pages-index-js-5cb392ae421651ef986d.js" async=""></script>
+</body>
+
+</html>

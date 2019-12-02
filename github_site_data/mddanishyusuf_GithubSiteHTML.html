@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mohd Danish Yusuf | Front-end Developer</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name='keywords' content='mddanishyusuf, Front-end Developer, Portfolio, Web Resume, Work Experience, Projects, Owner'>
+	<meta name='description' content='A personal website to show Work-Experience, Projects, Skills and etc'>
+	<meta name='subject' content='Personal Website'>
+	<meta name='language' content='ES'>
+	<meta name='robots' content='index,follow'>
+	<meta name='author' content='Mohd Danish Yusuf, mddanishyusuf@gmail.com'>
+	<meta name='developer' content='Mohd Danish Yusuf'>
+	<meta name='reply-to' content='mddanishyusuf@gmail.com'>
+	<meta name='owner' content='Mohd Danish Yusuf'>
+	<meta name='url' content='http://mddanishyusuf.github.io'>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/lib/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="bower_components/technology-icons/dist/styles/technology-icons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rokkitt">
+    <!-- og Meta tags -->
+    <meta property="og:title" content="Mohd Danish Yusuf | Front-end Developer" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://mddanishyusuf.github.io/" />
+	<meta property="og:image" content="https://mddanishyusuf.github.io/lib/img/mddanishyusuf.jpg" />
+
+</head>
+	<body ng-app="mdyusuf" ng-controller="homeController">
+	<div class="container-fluid header-fluid">
+		<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="row header">
+					<div class="col-md-2 col-sm-3 text-center header-left text-center">
+						<img src="/lib/img/mddanishyusuf.jpg">
+					</div>
+					<div class="col-md-10 col-sm-9 header-right">
+					<h2>Mohd Danish Yusuf <small>Front-end Developer</small></h2>
+						<div class="links">
+								<ul>
+									<li><a href="https://github.com/mddanishyusuf" target="_blank"><i class="fa fa-github"></i> github</a></li>
+									<li><a href="https://www.producthunt.com/@mddanishyusuf" target="_blank"><i class="fa fa-product-hunt"></i> ProductHunt</a></li>
+									<li><a href="https://www.linkedin.com/in/mddanishyusuf/" target="_blank"><i class="fa fa-linkedin-square"></i> linkedin</a></li>
+									<li><a href="https://medium.com/@mddanishyusuf" target="_blank"><i class="fa fa-medium "></i> blog</a></li>
+									<!-- <li><a href="https://stackoverflow.com/story/mddanishyusuf" target="_blank"><i class="fa fa-stack-overflow"></i> stack overflow</a></li> -->
+									<li><a href="Mohd-Danish-Resume.pdf" target="_blank"><i class="fa fa-file-text"></i> Resume</a></li>
+									<li><a href="mailto:mddanishyusuf@gmail.com"><i class="fa fa-envelope"></i> mail</a></li>
+								</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="container-fluid">
+		<div class="container body-content">
+			<p>Hey, I'm a Front-end Developer(React.js). I love to explore JavaScript Frameworks React.js, AngularJS, d3, Vue.js, Backbonejs, threejs. Open source contributer. I'm also interested to explore APIs of top websites as GitHub, facebook, twitter, google and build something new with these APIs. <a href="https://mohddanish.me/githubsearch/" target="_blank">githubsearch</a> ( Github APIs + AngularJS ). Currently, Building a knowledge base for React.js resources for developers. I'm active on twitter and following professional developers around the world to be an updated what they are doing and here is my twitter handler <a href="https://twitter.com/mddanishyusuf/" target="_blank">@mddanishyusuf</a></p>
+			<hr>
+			<button class="ibutton" type="submit" ui-sref="workExperience"><i class="fa fa-briefcase"></i> Work Experience</button>
+			<button class="ibutton" type="submit" ui-sref="openSourceProject"><i class="fa fa-github-alt"></i> Open Source Projects</button>
+			<button class="ibutton" type="submit" ui-sref="skills"><i class="fa fa-wrench"></i> Skills</button>
+			<button class="ibutton" type="submit" ui-sref="education"><i class="fa fa-graduation-cap"></i> Education</button>
+			<!-- <button class="ibutton" type="submit" ui-sref="archives"><i class="fa fa-trophy"></i> Archives</button> -->
+			<button class="ibutton" type="submit" ui-sref="interests"><i class="fa fa-heart"></i> Interests</button>
+	<hr>
+	<div class="row">
+		<div class="col-md-12">
+			<ul class="technology-used">
+				<li class="Love and Dedication"><em class="fa fa-heart"></em></li>
+				<li title="Bootstrap"><em class="icon-bootstrap"></em>  &</li>
+				<li title="Angular"><em class="icon-angular"></em></li>
+				<li>@mddanishyusuf - made with</li>
+			</ul>
+			<a href="https://pages.github.com/" target="_blank">Hosted on GitHub Pages</a>
+		</div>
+	</div>
+		</div>
+	</div>
+	<div class="second-layer" id="layer">
+	<center><button class="minimizeButton" type="submit" ng-click="minimizeThis()" title="minimize"><i class="fa fa-close"></i></button></center>
+		<ui-view></ui-view>
+	</div>
+
+	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="/bower_components/angular/angular.min.js"></script>
+	<script src="/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+	<script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="/lib/js/routes.js"></script>
+	<script src="/lib/js/function.js"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113126515-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-113126515-1');
+	</script>
+
+</body>
+</html>
