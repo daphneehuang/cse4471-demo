@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/wood1149/github-scraper#readme",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "github-scraper": "^6.8.0"
   },
   "devDependencies": {
